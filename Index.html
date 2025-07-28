@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>RS Bharti</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slider with Flip Logo</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <div class="navlogo border">
-                <div class="logo"></div>
-            </div>
-            <div class="class-nav border">
-                <p>Home</p>
-            </div>
-            <div class="class-nav border">
-                <p>About us</p>
-            </div>
-            <div class="class-nav border">
-                <p>Services</p>
-            </div>
-            <div class="class-nav border">
-                <p>Contact</p>
-            </div>                
-            <div class="class-nav border">
-                <p>FAQ</p>
-            </div>
+
+  <!-- Oval Flipping Logo -->
+  <div class="oval-logo">
+    <img src="https://via.placeholder.com/100x130" alt="Flipping Logo" />
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">MyLogo</div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Image Slider -->
+  <div class="slider">
+    <!-- Slides Container -->
+    <div class="slides">
+      <!-- Slide 1 -->
+      <div class="slide active" style="background-image: url('https://picsum.photos/id/1015/1600/800');">
+        <div class="slide-content">
+          <h1>Empowering Your Vision</h1>
+          <p>We bring your ideas to life.</p>
+          <a href="#" class="btn">Read More</a>
         </div>
-    </header>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide" style="background-image: url('https://picsum.photos/id/1018/1600/800');">
+        <div class="slide-content">
+          <h1>Innovation Meets Excellence</h1>
+          <p>Discover what’s possible with us.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
