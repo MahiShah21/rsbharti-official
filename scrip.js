@@ -1,23 +1,41 @@
-const slides = document.querySelectorAll('.slide');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
-let index = 0;
+// scrip.js
 
-function showSlide(i) {
-  slides.forEach((slide, idx) => {
-    slide.style.transform = `translateX(${(idx - i) * 100}%)`;
-  });
+const slides = document.querySelector('.slides');
+const slide = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+let currentIndex = 0;
+const totalSlides = slide.length;
+let autoSlideInterval;
+
+// Function to update slide position manually
+function updateSlidePosition() {
+  slides.style.animation = 'none'; // stop the CSS animation
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-next.addEventListener('click', () => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
+// Manual Navigation
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateSlidePosition();
+  resetAutoSlide();
 });
 
-prev.addEventListener('click', () => {
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  updateSlidePosition();
+  resetAutoSlide();
 });
 
-// Initialize on page load
-showSlide(index);
+// Reset auto-slide after manual interaction
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlidePosition();
+  }, 8000); // 8 seconds delay
+}
+
+// Start manual autoplay as fallback
+resetAutoSlide();
