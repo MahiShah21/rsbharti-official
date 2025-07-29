@@ -1,41 +1,30 @@
-// scrip.js
+const images = [
+  "images/library.jpg",
+  "images/library2.jpg"
+];
 
-const slides = document.querySelector('.slides');
-const slide = document.querySelectorAll('.slide');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
+let current = 0;
+const slider = document.getElementById("slider");
 
-let currentIndex = 0;
-const totalSlides = slide.length;
-let autoSlideInterval;
-
-// Function to update slide position manually
-function updateSlidePosition() {
-  slides.style.animation = 'none'; // stop the CSS animation
-  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+function changeSlide() {
+  slider.style.backgroundImage = `url(${images[current]})`;
 }
 
-// Manual Navigation
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  updateSlidePosition();
-  resetAutoSlide();
+document.querySelector(".next").addEventListener("click", () => {
+  current = (current + 1) % images.length;
+  changeSlide();
 });
 
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-  updateSlidePosition();
-  resetAutoSlide();
+document.querySelector(".prev").addEventListener("click", () => {
+  current = (current - 1 + images.length) % images.length;
+  changeSlide();
 });
 
-// Reset auto-slide after manual interaction
-function resetAutoSlide() {
-  clearInterval(autoSlideInterval);
-  autoSlideInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateSlidePosition();
-  }, 8000); // 8 seconds delay
-}
+// Auto-slide
+setInterval(() => {
+  current = (current + 1) % images.length;
+  changeSlide();
+}, 5000);
 
-// Start manual autoplay as fallback
-resetAutoSlide();
+// Initial load
+changeSlide();

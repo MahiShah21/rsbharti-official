@@ -3,54 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slider with Flip Logo</title>
+  <title>Education Template</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Oval Flipping Logo -->
-  <div class="oval-logo">
-    <img src="images/logo.png" alt="Flipping Logo" />
-  </div>
-
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">MyLogo</div>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Portfolio</a>
-      <a href="#">Contact</a>
+  <!-- Header and Navbar -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+        
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Elements</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      
     </div>
-  </nav>
+  </header>
 
-  <!-- Image Slider -->
-  <div class="slider">
-    <div class="slides">
-      <div class="slide" style='background-image: url("images/download1.jpg")'>
-        <div class="slide-content">
-          <h1>Empowering Your Vision</h1>
-          <p>We bring your ideas to life.</p>
-          <a href="#" class="btn">Read More</a>
+  <!-- Slider Section -->
+  <section class="slider" id="slider">
+    <button class="btn prev">PREV</button>
+    <div class="slide-content">
+      <h1>Get your <span>Education</span> today!</h1>
+      <div class="info-boxes">
+        <div class="box">
+          <div class="icon">🌐</div>
+          <h3>Online Courses</h3>
+          <a href="#">VIEW MORE</a>
+        </div>
+        <div class="box">
+          <div class="icon">📚</div>
+          <h3>Our Library</h3>
+          <a href="#">VIEW MORE</a>
+        </div>
+        <div class="box">
+          <div class="icon">👨‍🏫</div>
+          <h3>Our Teachers</h3>
+          <a href="#">VIEW MORE</a>
         </div>
       </div>
-      <div class="slide" style='background-image: url("images/download2.jpg")'>
-        <div class="slide-content">
-          <h1>Innovation Meets Excellence</h1>
-          <p>Discover what’s possible with us.</p>
-          <a href="#" class="btn">Read More</a>
-        </div>
-      </div>
     </div>
+    <button class="btn next">NEXT</button>
+  </section>
 
-    <!-- Navigation Buttons -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-  </div>
-
-  <script src="scrip.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
