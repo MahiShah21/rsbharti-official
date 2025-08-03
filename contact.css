@@ -1,0 +1,262 @@
+:root {
+      --dark-blue: #01161e;
+      --deep-teal: #124559;
+      --muted-blue: #598392;
+      --sage: #aec3b0;
+      --light-cream: #eff6e0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: var(--light-cream);
+      padding: 2rem;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      animation: zoomFadeIn 0.6s ease-in;
+    }
+    .left-panel {
+  position: relative;
+  flex: 1;
+  background: url('images/slider1.jpg') center center/cover;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  overflow: hidden;
+}
+
+.left-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(16, 115, 181, 0.5); /* White overlay with 60% opacity */
+  z-index: 1;
+}
+
+.left-panel > * {
+  position: relative;
+  z-index: 2;
+}
+
+    .left-panel h2 {
+      margin-bottom: 1rem;
+    }
+
+    .right-panel {
+      flex: 1;
+      padding: 2rem;
+    }
+    .right-panel:hover{
+        animation: zoomFadeIn 0.6s ease-in;
+    }
+
+    .right-panel h2 {
+      margin-bottom: 1.5rem;
+      color: var(--deep-teal);
+      animation: zoomFadeIn 0.6s ease-in 0.6s;
+    }
+    
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    form .full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #555;
+      font-size: 0.9rem;
+      animation: zoomFadeIn 0.6s ease-in 0.6s;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      background: transparent;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--deep-teal);
+      outline: none;
+    }
+
+    button {
+      grid-column: 2 / 3;
+      padding: 0.8rem;
+      background: var(--deep-teal);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      animation: zoomFadeIn 0.6s ease-in 0.6s;
+    }
+    
+    button:hover {
+      background: var(--muted-blue);
+      animation: zoomFadeIn 0.6s ease-in 0.6s;
+    }
+
+    @media(max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      button {
+        grid-column: 1 / 2;
+      }
+    }
+
+    /* -------------------------- Location ----------------------------------*/
+.info-section {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+.info-section:hover{
+  animation: zoomFadeIn 0.6s ease-in;
+}
+
+.info-header {
+  text-align: left;
+  margin-bottom: 30px;
+}
+.info-header:hover{
+    animation: zoomFadeIn 0.6s ease-info
+}
+
+.info-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.info-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.info-boxes:hover{
+  animation: zoomFadeIn 0.6s ease-in;
+}
+
+.info-box {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.icon {
+  background-color: #e0f7f7;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 24px;
+  color: #00b3b3;
+}
+
+.info-content h4 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #222;
+}
+
+.info-content p {
+  margin: 0;
+  color: #555;
+  font-size: 15px;
+}
+
+    .map-section {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .map-section:hover{
+        animation: zoomFadeIn 0.6s ease-in;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem;
+    }
+
+    .btn-container a {
+      background-color: var(--deep-teal);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0s ease;
+    }
+
+    .btn-container a:hover {
+      background-color: var(--muted-blue);
+      animation: zoomFadeIn 0.6s ease-in;
+    }
+
+/* ---------------------Animation -------------------------*/
+
+@keyframes zoomFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
