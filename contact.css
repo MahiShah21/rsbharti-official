@@ -13,6 +13,91 @@
       font-family: Arial, sans-serif;
     }
 
+    /*-------------Navbar------------ */
+
+      
+    .navbar {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: white;
+      color: black;
+      position: fixed;
+      top: 50px;
+      left: 5%;
+      right: 5%;
+      z-index: 1000;
+     
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin-right: 8%;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: orange;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+        /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 20px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+   /* ----------------- Navbar --------------------- */
+
     body {
       background: var(--light-cream);
       font-family: Arial, sans-serif;
@@ -145,6 +230,7 @@
 .info-section {
   padding: 40px;
   max-width: 1300px;
+  width: 97%;
   margin: auto;
   margin-top: 80px;
   font-family: 'Segoe UI', sans-serif;
