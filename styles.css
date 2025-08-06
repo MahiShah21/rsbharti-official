@@ -49,6 +49,7 @@
     }
 
     .nav-links li a {
+      text-align: center;
       text-decoration: none;
       color: black;
       font-size: 20px;
@@ -58,6 +59,7 @@
 
     .nav-links li a:hover {
       color: orange;
+      text-decoration: underline;
     }
 
     .menu-toggle {
@@ -168,6 +170,7 @@
 
       .nav-links {
         flex-direction: column;
+        text-align: center;
         gap: 20px;
         width: 100%;
         display: none;
@@ -176,6 +179,11 @@
 
       .nav-links.active {
         display: flex;
+      }
+
+      .nav-links li :hover {
+        color: orange;
+        text-decoration: underline;
       }
 
       .slider {
