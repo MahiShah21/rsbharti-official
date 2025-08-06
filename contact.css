@@ -15,12 +15,16 @@
 
     body {
       background: var(--light-cream);
-      padding: 2rem;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
     }
 
     .container {
       display: flex;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       background: white;
       border-radius: 10px;
@@ -140,8 +144,9 @@
     /* -------------------------- Location ----------------------------------*/
 .info-section {
   padding: 40px;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: auto;
+  margin-top: 80px;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
 }
@@ -154,7 +159,7 @@
   margin-bottom: 30px;
 }
 .info-header:hover{
-    animation: zoomFadeIn 0.6s ease-info
+    animation: zoomFadeIn 2s ease-info
 }
 
 .info-header h2 {
@@ -173,9 +178,7 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-.info-boxes:hover{
-  animation: zoomFadeIn 0.6s ease-in;
-}
+
 
 .info-box {
   background: #f9f9f9;
@@ -211,14 +214,15 @@
 
     .map-section {
       width: 100%;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
+      margin-top: 60px;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
     .map-section:hover{
-        animation: zoomFadeIn 0.6s ease-in;
+        animation: zoomFadeIn 2s ease-in;
     }
 
     iframe {

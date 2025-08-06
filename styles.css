@@ -8,8 +8,8 @@
       font-family: 'Arial', sans-serif;
       color: white;
       overflow-x: hidden;
+      font-family: sans-serif;
     }
-
 
 
     /* Navbar */
@@ -67,8 +67,7 @@
     }
 
     /* Slider Section */
-    .slider {
-      background: url("images/slider1.jpg") no-repeat center center/cover;
+     .slider {
       height: 100vh;
       display: flex;
       align-items: center;
@@ -76,7 +75,15 @@
       flex-direction: row;
       justify-content: space-between;
       padding: 0 20px;
+      background: url("images/slider1.jpg") no-repeat center center/cover;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
     }
+
+    .slider.fade-out {
+      opacity: 0;
+    }
+
 
     .btn {
       background: white;
@@ -86,7 +93,9 @@
       cursor: pointer;
       border: none;
       transition: background 0.3s;
+      z-index: 2;
     }
+
 
     .btn:hover {
       background: orange;
@@ -429,7 +438,71 @@
     font-size: 16px;
   }
 }
+/* brands logo*/
 
+
+    .round-slider-wrapper {
+      position: relative;
+      width: 90%;
+      max-width: 1100px;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-left:15%;
+    }
+
+    .round-slider-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .round-slide {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .round-slide img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .round-slide img:hover {
+      transform: scale(1.1);
+    }
+
+    .round-dots {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .round-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .round-dot.active {
+      background-color: #f44336;
+    }
+
+    @media screen and (max-width: 768px) {
+      .round-slide img {
+        width: 100px;
+        height: 100px;
+      }
+    }
 
 /* footer */
 
@@ -438,6 +511,7 @@
   color: #eee;
   font-family: 'Segoe UI', sans-serif;
   padding: 40px 20px 20px;
+  margin-top: 5%;
 }
 
 .footer-container {

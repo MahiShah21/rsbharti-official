@@ -18,9 +18,8 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Courses</a></li>
-        <li><a href="#">Elements</a></li>
         <li><a href="#">News</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="contact_us.html">Contact</a></li>
       </ul>
     </div>
   </header>
@@ -51,14 +50,7 @@
     <button class="btn next">NEXT</button>
   </section>
 
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
 
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
 
   <section class="our-story-section">
   <div class="story-container">
@@ -81,6 +73,52 @@
     </div>
   </div>
 </section>
+
+<!-- brands logo -->
+ <div class="round-slider-wrapper">
+    <div class="round-slider-track" id="sliderTrack">
+      <div class="round-slide">
+        <img src="images/lux.png" alt="1" />
+        <img src="images/onn.png" alt="2" />
+        <img src="images/britannia.jpg" alt="3" />
+        <img src="images/unilever.jpg" alt="4" />
+        <img src="images/genx.jpg" alt="5" />
+      </div>
+      <div class="round-slide">
+        <img src="images/slider6.jpg" alt="6" />
+        <img src="images/slider7.jpg" alt="7" />
+        <img src="images/slider8.jpg" alt="8" />
+        <img src="images/slider9.jpg" alt="9" />
+        <img src="images/slider10.jpg" alt="10" />
+      </div>
+    </div>
+  </div>
+
+  <div class="round-dots">
+    <span class="round-dot active" onclick="moveSlide(0)"></span>
+    <span class="round-dot" onclick="moveSlide(1)"></span>
+  </div>
+
+  <script>
+    const sliderTrack = document.getElementById('sliderTrack');
+    const dots = document.querySelectorAll('.round-dot');
+    let currentIndex = 0;
+    const totalSlides = dots.length;
+
+    function moveSlide(index) {
+      sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+      currentIndex = index;
+    }
+
+    // Auto Slide every 4 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      moveSlide(currentIndex);
+    }, 4000);
+  </script>
+
 <footer class="footer">
   <div class="footer-container">
     <!-- Social Media -->
@@ -131,6 +169,6 @@
 </footer>
 
 
-
+<script src="script.js"></script>
 </body>
 </html>
