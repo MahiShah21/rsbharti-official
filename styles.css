@@ -570,6 +570,7 @@
 
 .footer-column input[type="email"] {
   padding: 8px;
+  background-color: white;
   width: 90%;
   margin-top: 10px;
   border: none;
