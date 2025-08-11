@@ -139,7 +139,7 @@
 }
 
     .left-panel h2 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .right-panel {
@@ -168,14 +168,15 @@
 
     label {
       display: block;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
       color: #555;
       font-size: 0.9rem;
       animation: zoomFadeIn 0.6s ease-in 0.6s;
     }
+    
 
     input, textarea {
-      width: 100%;
+      width: 180%;
       padding: 0.6rem;
       border: none;
       border-bottom: 2px solid #ccc;
@@ -297,12 +298,12 @@
 
 .map-wrapper {
   position: relative;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 .map-wrapper::before {
   content: "";
   position: absolute;
-  top: 150px; /* start 50px lower */
+  top: 200px; /* start 50px lower */
   left: 40px; /* space from left */
   right: 40px; /* space from right */
   height: calc(100% - 150px);
@@ -326,7 +327,7 @@
 
 .map-section iframe {
   width: 100%;
-  height: 300px;
+  height: 400px;
   display: block;
 }
 

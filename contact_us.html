@@ -21,7 +21,7 @@
 
     <!-- ADD ID -->
     <ul class="nav-links" id="nav-links">
-      <li><a href="#">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="#">About Us</a></li>
       <li><a href="#">Courses</a></li>
       <li><a href="#">News</a></li>
@@ -39,28 +39,26 @@
     </div>
     <div class="right-panel">
       <h2>Send Us a Message</h2>
-      <form>
-        <div>
-          <label>Your name</label>
-          <input type="text" required>
-        </div>
-        <div>
-          <label>E-mail</label>
-          <input type="email" required>
-        </div>
-        <div>
-          <label>Phone Number</label>
-          <input type="tel">
-        </div>
-        <div>
-          <label>Subject</label>
-          <input type="text">
-        </div>
-        <div class="full-width">
-          <label>Message</label>
-          <textarea rows="4"></textarea>
-        </div>
-        <button type="submit">SEND</button>
+      <form action="https://formspree.io/f/mwpqayqw"  method="POST">
+        <label>
+            Name:
+            <textarea name="name"></textarea>
+         </label> <br>
+        <label>
+            email:
+            <input type="email" name="email">
+         </label><br>
+         <label>
+            Phone no.:
+            <input name="number"></input>
+         </label><br>
+        
+         <label>
+            Your message:
+            <textarea name="message"></textarea>
+         </label><br>
+  
+         <button type="submit" >Send</button>
       </form>
     </div>
   </div>
@@ -120,8 +118,8 @@
     <div class="footer-column">
       <h3>Follow Us</h3>
 <div class="social-links">
-  <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook">
-    <img src="images/facebook-icon.png" alt="Facebook" class="social-icon" />
+  <a href="https://www.linkedin.com/company/rsbharti-global-private-limited/" target="_blank" title="Facebook">
+    <img src="images/linkedin.png" alt="Facebook" class="social-icon" />
   </a>
   <a href="https://www.instagram.com/yourprofile" target="_blank" title="Instagram">
     <img src="images/instagram-icon.png" alt="Instagram" class="social-icon" />
