@@ -1,6 +1,6 @@
 const images = [
-  "images/slider1.jpg",
-  "images/slider2.jpg"
+  "images/slider1.avif",
+  "images/slider2.jpeg"
 ];
 
 let current = 0;
