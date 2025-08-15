@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff8f0;
+  background: #FFECE8;
 }
 
 .faq-section {
@@ -76,7 +76,7 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.3s ease;
-  background: #fff8f0;
+  background: #f0f0f0;
   color:#002147;
   font-size: 1rem;
   padding: 0 15px;

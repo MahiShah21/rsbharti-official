@@ -1,0 +1,95 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Modern, Elegant Font */
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tagline {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.tagline h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Our Story Section */
+.our-story {
+    margin: 0 8%;
+    padding: 60px 50px; /* Increased padding */
+    position: relative;
+    top: -20vh; /* Overlap hero image */
+    border-radius: 12px;
+   
+    text-align: center; /* Center align text */
+    background: #fff; /* Clean white background */
+    min-height: 70vh; /* Increased height */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.story-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    color: #222;
+}
+
+.story-content p {
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.our-story.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .our-story {
+        margin: 0 5%;
+        padding: 35px 20px;
+        top: -15vh;
+    }
+    .story-content h2 {
+        font-size: 2.2rem;
+    }
+    .story-content p {
+        font-size: 1rem;
+    }
+}
+
+/* team section */
+

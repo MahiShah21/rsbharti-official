@@ -30,38 +30,71 @@
   </div>
   </header>
 
+  <section class="contact-header">
+  <div class="header">
+    <h1>Contact Us</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <svg class="wave" viewBox="0 0 500 150" preserveAspectRatio="none">
+      <path d="M0,50 C150,150 350,0 500,50 L500,150 L0,150 Z" fill="#f7f9f8"></path>
+    </svg>
+  </div>
+</section>
 
 
   <div class="container">
-    <div class="left-panel">
-      <h2>Get In Touch</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet penatibus viverra sed pellentesque.</p>
+    
+    <div class="image-container">
+    <img src="images/form_image.jpg" class="main-img">
+
+    <!-- Top-left polaroid -->
+    <div class="overlay-img top-left">
+        <img src="images/form_image.jpg" alt="">
     </div>
-    <div class="right-panel">
-      <h2>Send Us a Message</h2>
-      <form action="https://formspree.io/f/mwpqayqw"  method="POST">
-        <label>
-            Name:
-            <textarea name="name"></textarea>
-         </label> <br>
-        <label>
-            email:
-            <input type="email" name="email">
-         </label><br>
-         <label>
-            Phone no.:
-            <input name="number"></input>
-         </label><br>
-        
-         <label>
-            Your message:
-            <textarea name="message"></textarea>
-         </label><br>
-  
-         <button type="submit" >Send</button>
-      </form>
+
+    <!-- Bottom-left polaroid -->
+    <div class="overlay-img bottom-left">
+        <img src="images/form_image.jpg" alt="">
     </div>
-  </div>
+</div>
+
+
+    <!-- Right side form -->
+    <div class="right">
+        <form>
+            <div class="row">
+                <div style="flex:1">
+                    <label>👤 First name *</label>
+                    <input type="text" required>
+                </div>
+                <div style="flex:1">
+                    <label> Last name *</label>
+                    <input type="text" required>
+                </div>
+            </div>
+            <div class="row">
+                <div style="flex:1">
+                    <label>📧Email *</label>
+                    <input type="email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div style="flex:1">
+                    <label>📞 Phone *</label>
+                    <input type="tel" placeholder="🌐" required>
+                </div>
+            </div>
+            <div class="row">
+                <div style="flex:1">
+                    <label>💬Write a message</label>
+                    <textarea></textarea>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit✨</button>
+        </form>
+    </div>
+</div>
+
+
 
    <div class="info-section">
   <div class="info-header">
