@@ -1,6 +1,6 @@
 const images = [
   "images/slider1.avif",
-  "images/slider2.jpeg"
+  "images/fmcg.jpg"
 ];
 
 let current = 0;
@@ -50,5 +50,4 @@ resetAutoSlide();
   toggle.addEventListener("click", () => {
     nav.classList.toggle("active");
   });
-
 
