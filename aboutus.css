@@ -313,9 +313,15 @@ body {
   transform: scale(1.1);
 }
 
+/* Gap element */
+  .spacer {
+    width: 600px; /* equals ~5 flags */
+    flex-shrink: 0;
+  }
+
 @keyframes scrollFlags {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translateX(40%); }
+  to { transform: translateX(-100%); }
 }
 
 /* Responsive */
