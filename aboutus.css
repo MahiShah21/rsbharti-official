@@ -297,7 +297,7 @@ body {
 .flag-track {
   display: flex;
   gap: 70px;
-  animation: scrollFlags 30s linear infinite;
+  animation: scrollFlags 55s linear infinite;
 }
 
 .flag-track img {
