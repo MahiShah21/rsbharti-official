@@ -469,5 +469,173 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
+/* Memories */
+/* CSS */
+.memories {
+  position: relative;
+  /* Use min() to cap the max width on large screens */
+  width: min(1520px, 100vw);
+  margin: 40px auto;
+  align-items: center;
+  background: #ffece8;
+  display: flex;
+  flex-direction: column;
+}
 
+.memories h1 {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 20px;
+  color: black;
+  /* Use vw for a font size that scales with the viewport */
+  font-size: clamp(30px, 4vw, 50px);
+  padding-top: 30px;
+}
+.slider-container {
+  display: flex;
+  align-items: center; /* This centers the items vertically */
+  gap: 20px;
+}
+
+.viewport {
+  overflow: hidden;
+  /* Make height relative to viewport for responsiveness */
+  height: 45vw;
+  /* Max width to maintain a good aspect ratio on large screens */
+  max-width: 1400px;
+  /* Center horizontally */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Use a relative gap */
+  gap: 1.5vw;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.6s ease;
+}
+
+/* make size changes smooth on the hex DIVs */
+.hex {
+  position: relative;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  transition: width 0.6s ease-in-out, height 0.6s ease-in-out,
+    transform 0.6s ease-in-out;
+}
+
+/* New: Black background hex */
+.background-hex {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Less z-index than the media hex */
+  background-color: black;
+  /* Size is slightly larger to create the border effect */
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  clip-path: polygon(
+    50% 0%,
+    95% 25%,
+    95% 75%,
+    50% 100%,
+    5% 75%,
+    5% 25%
+  );
+}
+
+/* The image holder hex */
+.media-hex {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* More z-index to bring it forward */
+  clip-path: polygon(
+    50% 0%,
+    95% 25%,
+    95% 75%,
+    50% 100%,
+    5% 75%,
+    5% 25%
+  );
+  overflow: hidden;
+  background: white;
+}
+
+.media-hex img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Size levels are now responsive using viewport width units */
+.hex.small {
+  width: 8vw;
+  height: 8vw;
+}
+
+.hex.medium {
+  width: 15vw;
+  height: 15vw;
+}
+
+.hex.large {
+  width: 25vw;
+  height: 25vw;
+}
+
+/* Arrow Button */
+.chevron-btn {
+  position: absolute;
+  top: 40%;
+  /* Use a relative position based on viewport width */
+  right: 7vw;
+  transform: translateY(-50%);
+  /* Use vw for a responsive size */
+  width: 15vw;
+  height: 25vw;
+  max-width: 100px;
+  max-height: 100px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chevron-btn svg {
+  width: 100%;
+  height: 300%;
+  fill: red; /* arrow color */
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.chevron-btn:hover svg {
+  transform: scale(1.1);
+  fill: red;
+}
+
+/* Media query to adjust for very small screens */
+@media (max-width: 600px) {
+  .hex.small {
+    width: 12vw;
+    height: 12vw;
+  }
+  .hex.medium {
+    width: 25vw;
+    height: 25vw;
+  }
+  .hex.large {
+    width: 40vw;
+    height: 40vw;
+  }
+}
 
