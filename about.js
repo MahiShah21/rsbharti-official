@@ -57,22 +57,6 @@ window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
 
-// Partners toggle
-document.querySelectorAll(".read-more").forEach(btn => {
-  btn.addEventListener("click", function() {
-    const cardContent = this.parentElement;
-    const moreText = cardContent.querySelector(".more-text");
-
-    if (cardContent.classList.contains("expanded")) {
-      cardContent.classList.remove("expanded");
-      this.textContent = "Read More";
-    } else {
-      cardContent.classList.add("expanded");
-      this.textContent = "Read Less";
-    }
-  });
-});
-
 
 // Team Slider
 document.addEventListener("DOMContentLoaded", () => {
@@ -106,3 +90,46 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateSlider);
 });
 
+
+/* -------- Network Map Hover + Lines -------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const pins = document.querySelectorAll(".pin:not(.origin)");
+  const origin = document.querySelector(".pin.origin");
+  const tooltip = document.getElementById("tooltip");
+  const tooltipFlag = document.getElementById("tooltip-flag");
+  const tooltipText = document.getElementById("tooltip-text");
+  const svg = document.querySelector(".map-lines");
+
+  // Draw lines from India to each pin
+  const originRect = origin.getBoundingClientRect();
+  const mapRect = origin.closest(".map-container").getBoundingClientRect();
+  const originX = originRect.left + originRect.width / 2 - mapRect.left;
+  const originY = originRect.top + originRect.height / 2 - mapRect.top;
+
+  pins.forEach(pin => {
+    const pinRect = pin.getBoundingClientRect();
+    const pinX = pinRect.left + pinRect.width / 2 - mapRect.left;
+    const pinY = pinRect.top + pinRect.height / 2 - mapRect.top;
+
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", originX);
+    line.setAttribute("y1", originY);
+    line.setAttribute("x2", pinX);
+    line.setAttribute("y2", pinY);
+    svg.appendChild(line);
+
+    // Tooltip events
+    pin.addEventListener("mouseenter", (e) => {
+      tooltip.style.display = "flex";
+      tooltipFlag.src = pin.dataset.flag;
+      tooltipText.textContent = pin.dataset.country;
+      const rect = e.target.getBoundingClientRect();
+      tooltip.style.top = rect.top + window.scrollY - 40 + "px";
+      tooltip.style.left = rect.left + window.scrollX + "px";
+    });
+
+    pin.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+  });
+});
