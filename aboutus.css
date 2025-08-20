@@ -475,7 +475,7 @@ body {
   position: relative;
   /* Use min() to cap the max width on large screens */
   width: min(1520px, 100vw);
-  margin: 40px auto;
+  padding: 40px auto;
   align-items: center;
   background: #ffece8;
   display: flex;
@@ -485,7 +485,6 @@ body {
 .memories h1 {
   position: relative;
   z-index: 10;
-  margin-bottom: 20px;
   color: black;
   /* Use vw for a font size that scales with the viewport */
   font-size: clamp(30px, 4vw, 50px);
@@ -500,7 +499,7 @@ body {
 .viewport {
   overflow: hidden;
   /* Make height relative to viewport for responsiveness */
-  height: 45vw;
+  height: 40vw;
   /* Max width to maintain a good aspect ratio on large screens */
   max-width: 1400px;
   /* Center horizontally */
@@ -514,7 +513,7 @@ body {
   align-items: center;
   justify-content: center;
   /* Use a relative gap */
-  gap: 1.5vw;
+  gap: 0.1vw;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -634,8 +633,8 @@ body {
     height: 25vw;
   }
   .hex.large {
-    width: 40vw;
-    height: 40vw;
+    width: 35vw;
+    height: 35vw;
   }
 }
 
