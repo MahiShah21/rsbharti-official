@@ -57,6 +57,44 @@
       transition: color 0.3s;
     }
 
+    /* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* below parent */
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dropdown-menu li a:hover {
+  background: #F54927;
+  color: white;
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
     .nav-links li a:hover {
       color: #F54927;
       text-decoration: underline;
