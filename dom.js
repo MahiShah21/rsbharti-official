@@ -1,6 +1,9 @@
-// Animate paragraphs after circle border completes
-document.querySelectorAll(".dist-box").forEach((box, i) => {
-  setTimeout(() => {
-    box.classList.add("active");
-  }, (i + 1) * 2000); // stagger animations
-});
+// Scroll reveal effect for dist-box content
+const boxes = document.querySelectorAll(".dist-box");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("active");
+  });
+}, { threshold: 0.3 });
+
+boxes.forEach(box => observer.observe(box));

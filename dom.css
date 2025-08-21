@@ -1,138 +1,84 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', serif; line-height: 1.8; }
 
-/* Modern, Elegant Font */
-body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    line-height: 1.8;
-    color: black;
-}
-
+/* Hero */
 .hero {
-  height: 60vh;
-  background-color: #fdecec; /* light pink background */
-  color: #111;
+  height: 100vh;
+  background: #fdecec;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-content h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 1; /* keep text above circles */
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  color: black;
-  margin-bottom: 1.5rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* Bottom-left concentric circles */
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border: 6px solid red;
-  border-radius: 50%;
-  bottom: -150px; /* half outside */
-  left: -150px;
-  box-shadow: 0 0 0 40px transparent, 0 0 0 80px red; 
-  /* 2nd circle using shadow */
-  z-index: 0;
-}
-
-/* Top-right concentric circles */
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border: 6px solid red;
-  border-radius: 50%;
-  top: -150px; /* half outside */
-  right: -150px;
-  box-shadow: 0 0 0 40px transparent, 0 0 0 80px red; 
-  z-index: 0;
-}
-
-
-/* Distributors CSS */
-.distributor {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 40px;
-}
-
-.dist-box {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #eee;
+  text-align: center;
+  flex-direction: column;
+}
+.hero-content h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+/* Logos under heading */
+.hero-logos {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.round-logo {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid red;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold;
+  transition: transform 0.4s;
+}
+.round-logo:hover { transform: scale(1.15); }
+
+/* Distributor full-screen sections */
+.distributor .dist-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
   padding: 40px;
-  border-radius: 12px;
 }
+.dist-box:nth-child(odd) { flex-direction: row; background: #f8f8f8; }
+.dist-box:nth-child(even) { flex-direction: row-reverse; background: #e8e8e8; }
 
-/* Circle container */
-.circle-box {
-  position: relative;
-  width: 150px;
-  height: 150px;
-}
-
+/* Circle with hover border animation */
+.circle-box { position: relative; width: 150px; height: 150px; }
+.circle-svg { width: 150px; height: 150px; transform: rotate(-90deg); }
 .circle-svg circle {
+  cx: 75; cy: 75; r: 70;
+  fill: none;
+  stroke: red;
+  stroke-width: 4;
   stroke-dasharray: 440;
   stroke-dashoffset: 440;
-  animation: drawCircle 2s linear forwards;
+  transition: stroke-dashoffset 2s ease;
 }
-
-@keyframes drawCircle {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* Logo number inside */
+.circle-box:hover circle { stroke-dashoffset: 0; }
 .dis-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 20px;
-  color: black;
+  font-weight: bold; font-size: 20px;
 }
 
-/* Paragraph fade effect */
+/* Content fade-in */
 .para {
   max-width: 400px;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 0; transform: translateY(40px);
   transition: all 1s ease;
-  color: #111;
+}
+.dist-box.active .para { opacity: 1; transform: translateY(0); }
+
+/* Fade-in heading */
+.fade-in { opacity: 0; transform: translateY(30px); animation: fadeUp 1s forwards; }
+.fade-in.delay { animation-delay: 0.6s; }
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.dist-box.active .para {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Alternate layouts */
-.dist-box:nth-child(even) {
-  flex-direction: row-reverse;
+/* Responsive */
+@media (max-width: 768px) {
+  .dist-box { flex-direction: column !important; text-align: center; }
+  .para { max-width: 90%; }
 }
