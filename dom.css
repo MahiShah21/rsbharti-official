@@ -65,8 +65,6 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   box-shadow: 0 0 0 40px transparent, 0 0 0 50px red; 
   z-index: 0;
 }
-
-/* Round logos */
 .round-logo {
   width: 80px; 
   height: 80px;
@@ -76,10 +74,17 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-weight: bold;
+  overflow: hidden;      /* ensures image stays inside circle */
   transition: transform 0.4s;
   cursor: pointer;
 }
+
+.round-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* crops nicely inside circle */
+}
+
 .round-logo:hover { 
   transform: scale(1.15); 
 }
