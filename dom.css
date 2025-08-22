@@ -4,16 +4,32 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
 
 /* Hero */
 .hero {
-  height: 100vh;
+  position: relative; /* Needed for pseudo-elements */
+  height: 60vh;
   background: #fdecec;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
+  overflow: hidden; /* hides circles that go outside */
+  z-index: 1;
 }
-.hero-content h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-.hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+
+.hero-content {
+  padding-top: 100px;
+  position: relative; 
+  z-index: 2; /* keeps text & logos above circles */
+}
+
+.hero-content h1 { 
+  font-size: 2.5rem; 
+  margin-bottom: 1rem; 
+}
+.hero-content p { 
+  font-size: 1.2rem; 
+  margin-bottom: 2rem; 
+}
 
 /* Logos under heading */
 .hero-logos {
@@ -21,16 +37,60 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   gap: 20px;
   justify-content: center;
 }
+
+/* Bottom-left concentric circles */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 3px solid red;
+  border-radius: 50%;
+  bottom: -80px; 
+  left: -120px;
+  box-shadow: 0 0 0 40px transparent, 0 0 0 50px red; 
+  z-index: 0;
+}
+
+/* Top-right concentric circles */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 3px solid red;
+  border-radius: 50%;
+  top: -120px; 
+  right: -120px;
+  box-shadow: 0 0 0 40px transparent, 0 0 0 50px red; 
+  z-index: 0;
+}
+
+/* Round logos */
 .round-logo {
-  width: 80px; height: 80px;
+  width: 80px; 
+  height: 80px;
   border-radius: 50%;
   background: white;
   border: 3px solid red;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   font-weight: bold;
   transition: transform 0.4s;
+  cursor: pointer;
 }
-.round-logo:hover { transform: scale(1.15); }
+.round-logo:hover { 
+  transform: scale(1.15); 
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p { font-size: 1rem; }
+  .round-logo { width: 65px; height: 65px; }
+  .hero::before, .hero::after { width: 200px; height: 200px; }
+}
 
 /* Distributor full-screen sections */
 .distributor .dist-box {
