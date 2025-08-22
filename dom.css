@@ -91,11 +91,14 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   .round-logo { width: 65px; height: 65px; }
   .hero::before, .hero::after { width: 200px; height: 200px; }
 }
+
 /* Distributor Section */
 .distributor {
   padding: 50px 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
 }
 
 .distributor-box {
@@ -107,19 +110,28 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   padding: 20px 30px;
   max-width: 1200px;
   width: 100%;
-  height: 400px;
-  gap: 20px;
+  gap: 40px; /* bigger gap between circle and text */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+/* Reverse layout: paragraph first, then circle */
+.distributor-box.reverse {
+  flex-direction: row-reverse;
+  justify-content: space-between; /* keeps gap */
+}
+
+/* Circle */
 .circle {
   width: 500px;
   height: 500px;
-  flex-shrink: 0; /* don’t let flexbox shrink it */
+  flex-shrink: 0;
 }
 
 .circle svg {
   width: 100%;
   height: 100%;
-  display: block; /* removes inline SVG whitespace */
+  background-color: #f87171;
+  display: block;
   transform: rotate(-90deg);
 }
 
@@ -127,30 +139,27 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   fill: none;
   stroke: red;
   stroke-width: 6;
-  stroke-dasharray: 1508;   /* circumference of r=240 */
-  stroke-dashoffset: 1508;
-  animation: drawBorder 3s linear forwards;
+  stroke-dasharray: 1508;
+  stroke-dashoffset: 1508; /* hidden */
+  transition: stroke-dashoffset 3s linear;
 }
 
-@keyframes drawBorder {
-  to {
-    stroke-dashoffset: 0;  /* reveals stroke fully */
-  }
-}
-
-/* Fade-in text AFTER border animation */
+/* Fade-in text */
 .fade-text {
   font-size: 1.1rem;
   color: black;
   margin: 0;
   line-height: 1.6;
   opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 3s; /* waits until border finishes */
+  transition: opacity 1s ease;
+  transition-delay: 3s; /* wait for border */
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+/* Active state when in view */
+.distributor-box.active .border-circle {
+  stroke-dashoffset: 0;
+}
+
+.distributor-box.active .fade-text {
+  opacity: 1;
 }

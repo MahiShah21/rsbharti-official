@@ -1,9 +1,17 @@
-// Scroll reveal effect for dist-box content
-const boxes = document.querySelectorAll(".dist-box");
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("active");
-  });
-}, { threshold: 0.3 });
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".distributor-box");
 
-boxes.forEach(box => observer.observe(box));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target); // run only once
+        }
+      });
+    },
+    { threshold: 0.4 } // trigger when 40% visible
+  );
+
+  boxes.forEach((box) => observer.observe(box));
+});
