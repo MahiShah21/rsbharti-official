@@ -3,103 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Domestic</title>
-  <link rel="stylesheet" href="dom.css"/>
-   <link rel="stylesheet" href="styles.css" />
+  <title>Image Content Carousel</title>  
+  <link rel="stylesheet" href="CSS/domestic.css">
+  <link rel="stylesheet" href="CSS/styles.css" />
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="logo">
-        <img src="images/logo.png" alt="Logo">
-      </div>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="Index.html">Home</a></li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li class="dropdown">
-          <a href="#">Services ▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Domestic</a></li>
-            <li><a href="#">International</a></li>
-          </ul>
-        </li>
-        <li><a href="FAQs.html">FAQs</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
-      </ul>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
     </div>
-  </header>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="Index.html">Home</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li class="dropdown">
+        <a href="#">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="domestic.html">Domestic</a></li>
+          <li><a href="international.html">International</a></li>
+       </ul>
+      </li>
+      <li><a href="FAQs.html">FAQs</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+  </div>
+</header>
+<section class="carousel">
+  <div class="carousel-container">
+    <div class="carousel-image" id="carouselImage"></div>
+    <div class="carousel-content">
+      <h2 id="carouselTitle">Title 1</h2>
+      <p id="carouselText">This is the description for the first image. You can add your content here and make it unique.</p>
+      <div class="buttons">
+        <button onclick="changeSlide(0)">1</button>
+        <button onclick="changeSlide(1)">2</button>
+        <button onclick="changeSlide(2)">3</button>
+        <button onclick="changeSlide(3)">4</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="javascript/domestic.js"></script>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="fade-in">Delivering Excellence Across Industries</h1>
-      <p class="fade-in delay">Your trusted distribution partner for growth and success</p>
+<!---footer-->
 
-      <!-- 4 round logos below heading -->
-      <div class="hero-logos">
-  <div class="round-logo">
-    <img src="images/britannia.png" alt="Logo 1">
-  </div>
-  <div class="round-logo">
-    <img src="images/b&c.jpeg" alt="Logo 2">
-  </div>
-  <div class="round-logo">
-    <img src="images/pynk.png" alt="Logo 3">
-  </div>
-  <div class="round-logo">
-    <img src="images/onn.png" alt="Logo 4">
-  </div>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Social Media -->
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+<div class="social-links">
+  <a href="https://www.linkedin.com/company/rsbharti-global-private-limited/" target="_blank" title="Facebook">
+    <img src="images/linkedin.png" alt="linkedin" class="social-icon" />
+  </a>
+  <a href="https://www.instagram.com/rsbharti2019?igsh=MXdyam9uaTFwOGc1aw==" target="_blank" title="Instagram">
+    <img src="images/instagram-icon.png" alt="Instagram" class="social-icon" />
+  </a>
+  <a href="mailto:info@rsbhartigroup.co" target="_blank" title="Gmail">
+    <img src="images/gmail-icon.png" alt="Gmail" class="social-icon" />
+  </a>
+  <a href="https://wa.me/8905403188" target="_blank" title="WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp" class="social-icon" />
+  </a>
 </div>
 
-    </div>
-  </section>
-<section class="distributor">
 
-  <!-- Box 1 -->
-  <div class="distributor-box">
-    <div class="circle">
-      <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
-        <circle class="border-circle" cx="250" cy="250" r="240" />
-      </svg>
-    </div>
-    <p class="fade-text">Distributor 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
   </div>
 
-  <!-- Box 2 -->
-  <div class="distributor-box reverse">
-    <p class="fade-text">Distributor 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <div class="circle">
-      <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
-        <circle class="border-circle" cx="250" cy="250" r="240" />
-      </svg>
+    <!-- About -->
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p><i class="fas fa-map-marker-alt"></i> 123, Main Street, City, Country</p>
+      <p><i class="fas fa-phone"></i> +91-1234567890</p>
+      <p><i class="fas fa-phone"></i> +91-9876543210</p>
     </div>
-  </div>
 
-  <!-- Box 3 -->
-  <div class="distributor-box">
-    <div class="circle">
-      <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
-        <circle class="border-circle" cx="250" cy="250" r="240" />
-      </svg>
+    <!-- Navigation -->
+    <div class="footer-column">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="about_us.html">About us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="FAQs.html">FAQs</a></li>
+        <li><a href="contact_us.html">Contact us</a></li>
+      </ul>
     </div>
-    <p class="fade-text">Distributor 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </div>
 
-  <!-- Box 4 -->
-  <div class="distributor-box reverse">
-    <p class="fade-text">Distributor 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <div class="circle">
-      <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
-        <circle class="border-circle" cx="250" cy="250" r="240" />
-      </svg>
+    <!-- Company Info -->
+    <div class="footer-column">
+      <h3><img src="images/logo.png" alt="RS Bharti Logo" class="footer-logo" />
+        RS Bharti
+      </h3>
+      <p>Your trusted partner in quality tea products. We ensure every sip speaks of purity and excellence.</p>
     </div>
   </div>
 
-</section>
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 RS Bharti. All rights reserved.</p>
+    <p>RS Bharti</p>
+  </div>
+</footer>
 
 
-
-  <script src="dom.js"></script>
 </body>
 </html>

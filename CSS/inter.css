@@ -98,73 +98,75 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
 }
 
 /* Distributor Section */
-.distributor {
-  padding: 50px 0;
+.distributors {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  align-items: center;
+  gap: 60px;
+  color: black;
 }
 
-.distributor-box {
-  background: #fff5f5;
-  border: 2px solid #f87171;
-  border-radius: 12px;
+.distributor {
   display: flex;
   align-items: center;
-  padding: 20px 30px;
-  max-width: 1200px;
-  width: 100%;
-  gap: 40px; /* bigger gap between circle and text */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  justify-content: center;
+  gap: 40px;
+  background: rgb(240, 227, 227);
+  padding: 40px;
+  border-radius: 12px;
+  height: 400px;
 }
 
-/* Reverse layout: paragraph first, then circle */
-.distributor-box.reverse {
-  flex-direction: row-reverse;
-  justify-content: space-between; /* keeps gap */
+.distributor p {
+  opacity: 0;
+  transition: opacity 1s ease;
+  max-width: 400px;
+  font-size: 18px;
 }
 
-/* Circle */
-.circle {
-  width: 500px;
-  height: 500px;
+/* Circle wrapper */
+.circle-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
   flex-shrink: 0;
 }
 
-.circle svg {
-  width: 100%;
-  height: 100%;
-  background-color: #f87171;
-  display: block;
+.circle-wrapper img {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.circle-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
   transform: rotate(-90deg);
+  width: 220px;
+  height: 220px;
 }
 
-.border-circle {
-  fill: none;
+.progress-ring__circle {
+  fill: transparent;
   stroke: red;
-  stroke-width: 6;
-  stroke-dasharray: 1508;
-  stroke-dashoffset: 1508; /* hidden */
-  transition: stroke-dashoffset 3s linear;
+  stroke-width: 5;
+  stroke-dasharray: 660;
+  stroke-dashoffset: 660;
+  transition: stroke-dashoffset 2s linear;
 }
 
-/* Fade-in text */
-.fade-text {
-  font-size: 1.1rem;
-  color: black;
-  margin: 0;
-  line-height: 1.6;
-  opacity: 0;
-  transition: opacity 1s ease;
-  transition-delay: 3s; /* wait for border */
-}
-
-/* Active state when in view */
-.distributor-box.active .border-circle {
-  stroke-dashoffset: 0;
-}
-
-.distributor-box.active .fade-text {
+/* Fade text after animation */
+.distributor.animated p {
   opacity: 1;
+}
+
+/* 🔄 Alternate layout */
+.distributor:nth-child(even) {
+  flex-direction: row-reverse;
 }
