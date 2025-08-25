@@ -14,6 +14,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   flex-direction: column;
   overflow: hidden; /* hides circles that go outside */
   z-index: 1;
+  margin-bottom: 70px;
 }
 
 .hero-content {
