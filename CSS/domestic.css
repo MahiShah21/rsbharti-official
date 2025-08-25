@@ -1,65 +1,169 @@
 
-    .carousel {
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hero */
+.hero {
+  position: relative; /* Needed for pseudo-elements */
+  height: 70vh;
+  background: #fdecec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  overflow: hidden; /* hides circles that go outside */
+  z-index: 1;
+  margin-bottom: 70px;
+}
+
+.hero-content {
+  padding-top: 100px;
+  position: relative; 
+  z-index: 2; /* keeps text & logos above circles */
+}
+
+.hero-content h1 { 
+  font-size: 2.5rem; 
+  margin-bottom: 1rem; 
+}
+.hero-content p { 
+  font-size: 1.2rem; 
+  margin-bottom: 2rem; 
+}
+
+/* Logos under heading */
+.hero-logos {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Bottom-left concentric circles */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 3px solid red;
+  border-radius: 50%;
+  bottom: -80px; 
+  left: -120px;
+  box-shadow: 0 0 0 40px transparent, 0 0 0 50px red; 
+  z-index: 0;
+}
+
+/* Top-right concentric circles */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 3px solid red;
+  border-radius: 50%;
+  top: -120px; 
+  right: -120px;
+  box-shadow: 0 0 0 40px transparent, 0 0 0 50px red; 
+  z-index: 0;
+}
+.round-logo {
+  width: 80px; 
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid red;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  overflow: hidden;      /* ensures image stays inside circle */
+  transition: transform 0.4s;
+  cursor: pointer;
+}
+
+.round-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* crops nicely inside circle */
+}
+
+.round-logo:hover { 
+  transform: scale(1.15); 
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p { font-size: 1rem; }
+  .round-logo { width: 65px; height: 65px; }
+  .hero::before, .hero::after { width: 200px; height: 200px; }
+}
+
+.carousel {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 110vh;
     }
 
-    .carousel-container {
-      display: flex;
-      width: 90%;
-      max-width: 1200px;
-      height: 00px;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
+.carousel-container {
+  display: flex;
+  width: 90%;
+  margin-top:-250px;
+  max-width: 1200px;
+  height: 550px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
-    .carousel-image {
-      flex: 1;
-      background-size: cover;
-      background-position: center;
-      transition: background-image 0.6s ease-in-out;
-    }
+.carousel-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.6s ease-in-out;
+}
 
-    .carousel-content {
-      flex: 1;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.carousel-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .carousel-content h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #333;
-    }
+.carousel-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
 
-    .carousel-content p {
-      font-size: 16px;
-      margin-bottom: 30px;
-      color: #666;
-      line-height: 1.5;
-    }
+.carousel-content p {
+  font-size: 16px;
+  margin-bottom: 50px;
+  color: #666;
+  line-height: 1.5;
+}
 
-    .buttons {
-      display: flex;
-      gap: 10px;
-    }
+.buttons {
+  display: flex;
+  gap: 15px;
+}
 
-    .buttons button {
-      padding: 10px 16px;
-      border: none;
-      border-radius: 6px;
-      background: #333;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.buttons button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .buttons button:hover {
-      background: #555;
-    }
+.buttons button:hover {
+  background: #555;
+}
