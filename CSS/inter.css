@@ -6,8 +6,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
 /* Distributor Section */
 .distributors {
   display: flex;
-  flex-direction: column;
-  gap: 60px;
+  flex-direction: column;;
   color: black;
 }
 
@@ -20,6 +19,12 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   padding: 40px;
   border-radius: 12px;
   height: 400px;
+}
+.distributor.d_white {
+  background: white;
+}
+.distributor.d_grey {
+  background: gray;
 }
 
 .distributor p {
@@ -76,3 +81,4 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
 .distributor:nth-child(even) {
   flex-direction: row-reverse;
 }
+

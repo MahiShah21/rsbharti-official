@@ -8,33 +8,60 @@ body, html {
 
 /* Hero */
 .hero {
-  position: relative; /* Needed for pseudo-elements */
+  position: relative;
   height: 70vh;
-  background: #fdecec;
+  background: url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D') no-repeat center center/cover; /* Ensure image path is correct */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: column;
   overflow: hidden; /* hides circles that go outside */
-  z-index: 1;
   margin-bottom: 70px;
 }
 
 .hero-content {
   padding-top: 100px;
-  position: relative; 
-  z-index: 2; /* keeps text & logos above circles */
+  position: relative;
+  z-index: 2; /* Keep text & logos above circles */
 }
 
-.hero-content h1 { 
-  font-size: 2.5rem; 
-  margin-bottom: 1rem; 
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
-.hero-content p { 
-  font-size: 1.2rem; 
-  margin-bottom: 2rem; 
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 3px solid red;
+  border-radius: 50%;
+  bottom: -80px;
+  left: -120px;
+  box-shadow: 0 0 0 40px transparent, 0 0 0 50px red;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 3px solid red;
+  border-radius: 50%;
+  top: -120px;
+  right: -120px;
+  box-shadow: 0 0 0 40px transparent, 0 0 0 50px red;
+  z-index: 0;
+}
+
 
 /* Logos under heading */
 .hero-logos {
@@ -43,33 +70,6 @@ body, html {
   justify-content: center;
 }
 
-/* Bottom-left concentric circles */
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border: 3px solid red;
-  border-radius: 50%;
-  bottom: -80px; 
-  left: -120px;
-  box-shadow: 0 0 0 40px transparent, 0 0 0 50px red; 
-  z-index: 0;
-}
-
-/* Top-right concentric circles */
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border: 3px solid red;
-  border-radius: 50%;
-  top: -120px; 
-  right: -120px;
-  box-shadow: 0 0 0 40px transparent, 0 0 0 50px red; 
-  z-index: 0;
-}
 .round-logo {
   width: 80px; 
   height: 80px;
