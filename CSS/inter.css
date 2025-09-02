@@ -2,6 +2,21 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Georgia', serif; line-height: 1.8; }
 
+.hero {
+  background: url('https://t3.ftcdn.net/jpg/03/06/22/80/360_F_306228011_2jldV5x45r0Ou3IiFJNMj3PDJPXKfgEX.jpg') no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
+  position: relative;
+}
+.hero_content {
+  padding-top: 100px;
+  position: relative;
+  z-index: 2; /* Keep text & logos above circles */
+}
 
 /* Distributor Section */
 .distributors {
