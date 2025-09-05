@@ -29,7 +29,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 400px;
   background: rgb(240, 227, 227);
   padding: 40px;
   border-radius: 12px;
@@ -84,7 +84,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   stroke-width: 5;
   stroke-dasharray: 660;
   stroke-dashoffset: 660;
-  transition: stroke-dashoffset 1s linear;
+  transition: stroke-dashoffset 0.8s linear;
 }
 
 /* Fade text after animation */

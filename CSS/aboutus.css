@@ -362,11 +362,11 @@ body {
 
 .pin {
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   background: red;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 1px solid white;
   cursor: pointer;
   transform: translate(-50%, -50%);
   transition: transform 0.2s;
