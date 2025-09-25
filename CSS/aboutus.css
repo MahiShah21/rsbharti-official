@@ -313,9 +313,24 @@ body {
   transform: scale(1.1);
 }
 
+.flag-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px; /* space between flag & text */
+}
+
+.flag-item span {
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+
 /* Gap element */
   .spacer {
-    width: 600px; /* equals ~5 flags */
+    width: 200px; /* equals ~5 flags */
     flex-shrink: 0;
   }
 
