@@ -22,18 +22,35 @@ const data = [
 ];
 
 let currentIndex = 0;
+let autoSlideInterval;
 
 function changeSlide(index) {
   currentIndex = index;
   document.getElementById("carouselImage").style.backgroundImage = `url(${data[index].img})`;
   document.getElementById("carouselTitle").innerText = data[index].title;
   document.getElementById("carouselText").innerText = data[index].text;
+  
+  // reset auto-slide timer whenever user manually changes slide
+  resetAutoSlide();
 }
 
-// Initialize first slide
-changeSlide(0);
+// Auto Slide Function
+function autoSlide() {
+  currentIndex = (currentIndex + 1) % data.length;
+  changeSlide(currentIndex);
+}
 
-// hero slider
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(autoSlide, 5000);
+}
+
+// Initialize first slide & auto-slide
+changeSlide(0);
+resetAutoSlide();
+
+
+// =================== HERO SLIDER PARTICLES ===================
 
 const canvas = document.getElementById("particle-canvas");
 const ctx = canvas.getContext("2d");
@@ -112,4 +129,3 @@ window.addEventListener("resize", () => {
 
 init();
 animate();
-
