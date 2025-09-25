@@ -34,25 +34,31 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 400px;
+  gap: 250px;
   background: rgb(240, 227, 227);
   padding: 40px;
   border-radius: 12px;
   height: 400px;
+  margin: 0 auto;
 }
 .distributor.d_white {
   background: white;
+  width: 70%;
 }
 .distributor.d_grey {
   background: gray;
+  width: 70%;
 }
 
 .distributor p {
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
   max-width: 400px;
+  min-width: 400px; /* prevent width change while animating */
   font-size: 18px;
+  word-wrap: break-word; /* wrap words properly */
 }
+
 
 /* Circle wrapper */
 .circle-wrapper {
