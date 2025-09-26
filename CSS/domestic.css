@@ -170,17 +170,18 @@ body, html {
 
 
 /* Parallax Section */
-    .parallax-section {
-      position: relative;
-      background-image: url("https://picsum.photos/1600/900?random=1");
-      min-height: 90vh;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.parallax-section {
+  position: relative;
+  background-image: url("../images/sita.jpg");
+  min-height: 90vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center; /* show top part of the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
     /* Floating Content Box */
     .content-box {
