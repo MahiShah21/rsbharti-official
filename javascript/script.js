@@ -1,53 +1,58 @@
-const images = [
-  "images/slider1.avif",
-  "images/fmcg.jpg"
+const items = [
+  "images/RS1.mp4",
+  "images/homebanner.jpg"
 ];
 
 let current = 0;
 const slider = document.getElementById("slider");
 let autoSlideInterval;
 
-// Smooth fade effect
 function changeSlide() {
-  slider.classList.add("fade-out");
-  setTimeout(() => {
-    slider.style.backgroundImage = `url(${images[current]})`;
-    slider.classList.remove("fade-out");
-  }, 300);
+  // Remove old background
+  slider.querySelectorAll("video, .slider-bg").forEach(el => el.remove());
+
+  const currentFile = items[current];
+
+  if (currentFile.endsWith(".mp4")) {
+    // Add video background
+    const video = document.createElement("video");
+    video.src = currentFile;
+    video.autoplay = true;
+    video.loop = false; // important → so it ends once
+    video.muted = true;
+    slider.insertBefore(video, slider.firstChild);
+
+    // When video ends → go to next slide
+    video.addEventListener("ended", () => {
+      current = (current + 1) % items.length;
+      changeSlide();
+    });
+
+  } else {
+    // Add image background
+    const bg = document.createElement("div");
+    bg.className = "slider-bg";
+    bg.style.backgroundImage = url(${currentFile});
+    slider.insertBefore(bg, slider.firstChild);
+
+    // For images → use timer (5 sec)
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+      current = (current + 1) % items.length;
+      changeSlide();
+    }, 5000);
+  }
 }
 
-// Reset auto slider when manually clicked
-function resetAutoSlide() {
-  clearInterval(autoSlideInterval);
-  autoSlideInterval = setInterval(() => {
-    current = (current + 1) % images.length;
-    changeSlide();
-  }, 5000);
-}
-
-// Event listeners
 document.querySelector(".next").addEventListener("click", () => {
-  current = (current + 1) % images.length;
+  current = (current + 1) % items.length;
   changeSlide();
-  resetAutoSlide();
 });
 
 document.querySelector(".prev").addEventListener("click", () => {
-  current = (current - 1 + images.length) % images.length;
+  current = (current - 1 + items.length) % items.length;
   changeSlide();
-  resetAutoSlide();
 });
 
 // Initial load
 changeSlide();
-resetAutoSlide();
-
-// Nav bar toggle
-
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-
