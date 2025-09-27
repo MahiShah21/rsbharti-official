@@ -1,6 +1,7 @@
 const items = [
+  "images/our_story.jpg",
   "images/RS1.mp4",
-  "images/homebanner.jpg"
+  "images/home_banner.jpg"
 ];
 
 let current = 0;
@@ -14,28 +15,26 @@ function changeSlide() {
   const currentFile = items[current];
 
   if (currentFile.endsWith(".mp4")) {
-    // Add video background
     const video = document.createElement("video");
     video.src = currentFile;
     video.autoplay = true;
-    video.loop = false; // important → so it ends once
+    video.loop = false;
     video.muted = true;
     slider.insertBefore(video, slider.firstChild);
 
-    // When video ends → go to next slide
     video.addEventListener("ended", () => {
       current = (current + 1) % items.length;
       changeSlide();
     });
 
+    clearInterval(autoSlideInterval); // stop any running interval
+
   } else {
-    // Add image background
     const bg = document.createElement("div");
     bg.className = "slider-bg";
-    bg.style.backgroundImage = url(${currentFile});
+    bg.style.backgroundImage = `url(${currentFile})`; // ✅ fixed
     slider.insertBefore(bg, slider.firstChild);
 
-    // For images → use timer (5 sec)
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(() => {
       current = (current + 1) % items.length;
@@ -54,5 +53,4 @@ document.querySelector(".prev").addEventListener("click", () => {
   changeSlide();
 });
 
-// Initial load
 changeSlide();
