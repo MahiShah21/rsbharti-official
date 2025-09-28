@@ -194,6 +194,7 @@
         position: absolute;
         right: 30px;
         top: 20px;
+        color: black;
       }
 
       .nav-links {
@@ -244,7 +245,7 @@
 /* Section Base */
 .our-story-section {
   width: 100%;
-  padding: 100px 0;
+  padding: 50px 0;
   background-color:white ;
 }
 
@@ -271,7 +272,7 @@
 .story-right {
   width: 65%;
   background: #fff;
-  padding: 60px 40px;
+  padding: 60px 30px;
   display: flex;
   align-items: center;
 }
@@ -314,13 +315,14 @@
 /* Text Content */
 .text-content {
   z-index: 3;
-  margin-left:80px;
+  margin-left:15%;
 }
 
 .text-content h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10%;
+  margin-top: 5%;
   line-height: 1.2;
   color: #111;
 }
@@ -470,7 +472,7 @@
 
 .brands{
   background-color: #eee;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 /* Text section */
 .text-section {
@@ -504,7 +506,7 @@
 .circle-gallery {
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: 4%;
   max-width: 1500px;
   padding: 50px 30px;
 }
@@ -576,6 +578,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+    text-align: center;
 }
 
 .logo-container img {
@@ -589,7 +592,7 @@
     }
 
     .logo-container img {
-        width: 140px;
+        width: 500px;
     }
 }
 

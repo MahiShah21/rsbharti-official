@@ -1,6 +1,5 @@
 const items = [
   "images/our_story.jpg",
-  "images/RS1.mp4",
   "images/home_banner.jpg"
 ];
 
@@ -54,3 +53,11 @@ document.querySelector(".prev").addEventListener("click", () => {
 });
 
 changeSlide();
+
+// Nav bar toggle
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
