@@ -12,7 +12,7 @@
       font-family: Arial, sans-serif;
     }
 
-    .contact-header {
+.contact-header {
   position: relative;
   background-color: #f7f9f8;
   text-align: center;
@@ -55,8 +55,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 40px;
-        gap: 100px;
+        padding: 40px 0px;
+        gap: 60px;
     }
     
     .image-container {
@@ -147,13 +147,12 @@ input, textarea {
         width: 150px;
     }
 
-    /------------------------------------section------------------------------------/
+    /*------------------------------------section------------------------------------/
 
     /* -------------------------- Location ----------------------------------*/
 .info-section {
-  padding: 80px;
-  max-width: 1300px;
-  width: 97%;
+  padding: 4%;
+  width: 100%;
   font-family: 'Segoe UI', sans-serif;
   color: #333;
 }
@@ -179,7 +178,7 @@ input, textarea {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  padding:20px 120px 60px 120px;
+  padding:auto ;
 }
 
 
@@ -280,3 +279,40 @@ input, textarea {
 }
 
 
+
+@media (max-width: 750px) and (min-width: 250px) {
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10% 3%;
+        gap: 60px;
+    }
+    .right {
+        flex: 1;
+        padding: 3%;
+    }
+
+  .info-section {
+    padding: 40px 10px; /* reduce padding */
+  }
+  .info-boxes {
+    padding: 10px 20px; /* reduce side padding */
+    flex-direction: column; /* stack vertically */
+    align-items: center; /* center align boxes */
+  }
+
+  .info-box {
+    max-width: 100%; /* take full width */
+    width: 100%;
+  }
+
+  .info-content h4 {
+    font-size: 16px;
+  }
+
+  .info-content p {
+    font-size: 14px;
+  }
+}
