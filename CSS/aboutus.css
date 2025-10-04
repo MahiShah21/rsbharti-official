@@ -164,7 +164,11 @@ body {
   border-radius: 50%;
   font-size: 1.5rem;
   transition: background 0.3s;
+  z-index: 5000;
+  pointer-events: auto;
 }
+
+
 
 .team-btn:hover {
   background: red;
@@ -659,4 +663,3 @@ body {
     height: 35vw;
   }
 }
-
