@@ -501,7 +501,7 @@ body {
   position: relative;
   /* Use min() to cap the max width on large screens */
   width: min(1520px, 100vw);
-  padding: 40px auto;
+  padding: 20px auto;
   align-items: center;
   background: #fcf1ef;
   display: flex;
