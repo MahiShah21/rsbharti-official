@@ -34,20 +34,20 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 250px;
+  gap: 15%;
   background: rgb(240, 227, 227);
   padding: 40px;
   border-radius: 12px;
   height: 400px;
-  margin: 0 auto;
+  margin: 2% auto;
 }
 .distributor.d_white {
-  background: white;
-  width: 70%;
+  background: rgb(238, 234, 234);
+  width: 80%;
 }
 .distributor.d_grey {
   background: gray;
-  width: 70%;
+  width: 80%;
 }
 
 .distributor p {
