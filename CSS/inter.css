@@ -108,3 +108,46 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   flex-direction: row-reverse;
 }
 
+/* ===== Responsive Distributor Section ===== */
+@media (max-width: 1000px) {
+  .distributor {
+    flex-direction: column;          /* Stack circle above text */
+    height: auto;                    /* Let height adjust naturally */
+    gap: 25px;                       /* Smaller gap between image and text */
+    padding: 30px 20px;
+    text-align: center;              /* Center text for clean mobile look */
+  }
+
+  .distributor:nth-child(even) {
+    flex-direction: column;          /* Override alternating reverse layout */
+  }
+
+  .circle-wrapper {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  .circle-wrapper img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .circle-wrapper svg {
+    width: 180px;
+    height: 180px;
+  }
+
+  .distributor p {
+    max-width: 90%;                  /* Let text take up more width */
+    min-width: auto;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .distributor.d_white,
+  .distributor.d_grey {
+    width: 95%;                      /* Slightly narrower for smaller screens */
+  }
+
+}
