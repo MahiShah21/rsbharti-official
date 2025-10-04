@@ -106,7 +106,7 @@ function animate() {
 
       if (distance < 100) {
         ctx.beginPath();
-        ctx.strokeStyle = "rgba(0, 247, 255, 0.2)";
+        ctx.strokeStyle = "rgba(255, 255, 255, 1)";
         ctx.lineWidth = 0.5;
         ctx.moveTo(particle.x, particle.y);
         ctx.lineTo(particles[j].x, particles[j].y);
