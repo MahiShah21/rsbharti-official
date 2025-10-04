@@ -525,13 +525,14 @@ body {
 .viewport {
   overflow: hidden;
   /* Make height relative to viewport for responsiveness */
-  height: 40vw;
+  height: 60vw;
+  width: 60vw;
   /* Max width to maintain a good aspect ratio on large screens */
   max-width: 1400px;
   /* Center horizontally */
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 
 .track {
