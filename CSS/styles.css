@@ -87,7 +87,8 @@
 
 .dropdown-menu li a:hover {
   background: #F54927;
-  color: white;
+  
+ 
 }
 
 /* Show on hover */
@@ -95,11 +96,7 @@
   display: block;
 }
 
-    .nav-links li a:hover {
-      color: #F54927;
-      text-decoration: underline;
-    }
-
+   
     .menu-toggle {
       display: none;
       font-size: 28px;

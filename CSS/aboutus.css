@@ -525,8 +525,8 @@ body {
 .viewport {
   overflow: hidden;
   /* Make height relative to viewport for responsiveness */
-  height: 60vw;
-  width: 60vw;
+  height: 40vw;
+  width: 75vw;
   /* Max width to maintain a good aspect ratio on large screens */
   max-width: 1400px;
   /* Center horizontally */
@@ -624,7 +624,7 @@ body {
   position: absolute;
   top: 40%;
   /* Use a relative position based on viewport width */
-  right: 7vw;
+  right: 10vw;
   transform: translateY(-50%);
   /* Use vw for a responsive size */
   width: 15vw;
