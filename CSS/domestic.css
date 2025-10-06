@@ -239,19 +239,20 @@ body, html {
 
     /* Floating Content Box */
     .content-box {
-      background: rgba(0, 0, 0, 0.3); /* semi-transparent background */
+      background: rgba(255, 255, 255, 0.3); /* semi-transparent background */
       padding: 1.5rem 2.5rem;
       border-radius: 15px;
       backdrop-filter: blur(8px); /* glass effect */
       max-width: 800px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 25px rgba(0, 100, 0, 0.3);
       animation: fadeInUp 1.2s ease;
     }
 
     .content-box h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: red;
     }
 
     .content-box p{
