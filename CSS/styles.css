@@ -172,7 +172,7 @@
 }
 
 .slide-content h1 span {
-  background: #F54927;
+  background: #ED3500;
   padding: 0 15px;
 }
 
@@ -208,7 +208,7 @@
       }
 
       .nav-links li :hover {
-        color: #F54927;
+        color: #ED3500;
         text-decoration: underline;
       }
 
@@ -321,14 +321,14 @@
   margin-bottom: 10%;
   margin-top: 5%;
   line-height: 1.2;
-  color: #111;
+  color: #ED3500;
 }
 
 .text-content h2 span {
   font-size: 1rem;
   letter-spacing: 2px;
   display: block;
-  color: #F54927;
+  color: #ED3500;
 }
 
 .text-content p {
@@ -488,7 +488,7 @@
 .text-section h1 {
   font-size: 35px;
   font-weight: bold;
-  color: #d62828;
+  color: #ED3500;
   margin: 10px 0;
 }
 
@@ -623,10 +623,10 @@
 }
 
 .content-box h2 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #d62828;
+    color: #ED3500;
 }
 
 .content-box p {

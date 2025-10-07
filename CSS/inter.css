@@ -63,7 +63,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
 .distributor-right h2 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-   color:red;
+   color:#ED3500;
 }
 
 .distributor-right p {
@@ -103,7 +103,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
 }
 .progress-ring__circle {
   fill: transparent;
-  stroke: red;
+  stroke: #ED3500;
   stroke-width: 5;
   stroke-dasharray: 660;
   stroke-dashoffset: 660;

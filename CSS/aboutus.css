@@ -54,17 +54,17 @@ body {
 }
 
 .story-content h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 25px;
     font-weight: bold;
     font-family: 'Merriweather', serif;
-    color: #222;
+    color: #ED3500;
 }
 
 .story-content p {
     margin-bottom: 20px;
     font-size: 1.15rem;
-    color: #555;
+    color: rgba(38, 36, 36, 0.986);
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -84,7 +84,7 @@ body {
         top: -15vh;
     }
     .story-content h2 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     .story-content p {
         font-size: 1rem;
@@ -96,14 +96,14 @@ body {
 /* Team Section */
 .team-section {
   text-align: center;
-  padding: 60px 20px;
-  background: #f9f9f9;
+  padding: 40px 20px;
+  background: #eeeeeee1;
 }
 
 .team-section h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #222;
+  color: #ED3500;
 }
 
 .team-slider {
@@ -207,7 +207,7 @@ body {
 .goals-section {
     text-align: center;
     padding: 60px 40px;
-    background: #fff;
+    background: #eeeeeee1;
     width: 100%;           /* take full width */
 }
 
@@ -215,7 +215,7 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: red;            /* heading in red */
+    color: #ED3500;            /* heading in red */
 }
 
 .goals-desc {
@@ -251,12 +251,12 @@ body {
 .goal-item h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: red;             /* red heading */
+    color: #ED3500;             /* red heading */
 }
 
 .goal-item p {
     font-size: 1.05rem;
-    color: #555;
+    color: black;
     line-height: 1.6;
 }
 
@@ -277,12 +277,12 @@ body {
 .network-section {
   text-align: center;
   padding: 60px 20px;
-  background: #fff;
+  background: white;
 }
 
 .network-section h2 {
   font-size: 2.5rem;
-  color: red;
+  color: #ED3500;
   margin-bottom: 15px;
 }
 
@@ -454,7 +454,7 @@ body {
 .certificates {
   text-align: center;
   padding: 60px 20px;
-  background: #f9f9f9;
+  background: #eeeeeee1;
 }
 .certificates h2 {
   font-size: 2.5rem;
@@ -503,7 +503,7 @@ body {
   width: min(1520px, 100vw);
   padding: 20px auto;
   align-items: center;
-  background: #fcf1ef;
+  background: white;
   display: flex;
   flex-direction: column;
 }
@@ -511,7 +511,7 @@ body {
 .memories h1 {
   position: relative;
   z-index: 10;
-  color: black;
+  color: #ED3500;
   /* Use vw for a font size that scales with the viewport */
   font-size: clamp(30px, 4vw, 50px);
   padding-top: 30px;
