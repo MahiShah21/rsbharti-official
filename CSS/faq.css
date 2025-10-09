@@ -22,7 +22,14 @@ body {
   text-align: center;
   color: #ED3500;
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+}
+
+.faq-section p {
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 30px;
 }
 
 .faq-section2 h1 {

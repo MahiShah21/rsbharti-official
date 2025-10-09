@@ -1,5 +1,6 @@
 const items = [
-  "images/our_story.jpg",
+  "images/banner2.jpg",
+  "images/banner3.jpg",
   "images/home_banner.jpg"
 ];
 
