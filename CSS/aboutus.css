@@ -506,14 +506,18 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   max-width: 250px;
   transition: transform 0.3s;
+  justify-content: space-between; /* space between image and caption */
+  height: 100%; /* make sure all cards equal height */
+  height: 400px; /* adjust based on your image size */
 }
 .cert-card img {
   width: 100%;
+  height: 85%;
   border-radius: 5px;
 }
 .cert-card span {
   display: block;
-  margin-top: 10px;
+  margin-top: auto;
   font-weight: bold;
   color: #333;
 }
