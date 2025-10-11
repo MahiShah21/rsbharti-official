@@ -64,11 +64,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!container || !members.length) return;
 
   let index = 0;
-  const visibleCount = 4; // number of members visible at once
+
+  // Function to calculate visible members dynamically
+  function getVisibleCount() {
+    if (window.innerWidth <= 480) return 1;
+    if (window.innerWidth <= 768) return 2;
+    if (window.innerWidth <= 992) return 3;
+    return 5; // desktop
+  }
 
   function updateSlider() {
+    const visibleCount = getVisibleCount();
     const memberWidth = members[0].getBoundingClientRect().width;
-    index = Math.max(0, Math.min(index, members.length - visibleCount)); // clamp
+    const maxIndex = Math.max(0, members.length - visibleCount);
+    index = Math.max(0, Math.min(index, maxIndex));
     container.style.transform = `translateX(${-index * memberWidth}px)`;
   }
 
