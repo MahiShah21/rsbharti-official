@@ -7,14 +7,14 @@
 
   
 
-    body {
+  body {
       background-color: #fce4dfc7;
       font-family: Arial, sans-serif;
     }
 
 .contact-header {
   position: relative;
-  background-color: #f7f9f8;
+ 
   text-align: center;
   overflow: hidden; /* hide overflow from wave */
 }
@@ -33,7 +33,7 @@
 
 .header {
   position: relative;
-  background: url('images/contact_image.jpg') no-repeat center center/cover;
+  background: url('../images/contact_image.jpg') no-repeat center center/cover;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@
     border-radius: 20px;
     padding: 2px;
     background-color: white;
-    border: 3px solid black;
+    
 }
 
 /* Polaroid style */
@@ -80,7 +80,7 @@
     height: 200px;
     background: white;
     padding: 4px;
-    border: 2px solid black;
+    
     box-shadow: 2px 4px 6px rgba(0,0,0,0.3);
     transform: rotate(-5deg);
     z-index: 10;

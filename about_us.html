@@ -242,35 +242,37 @@ We are not just building a business—we are building a legacy of quality, trust
   </div>
 </div>
 
-
   </div>
 
-  <div class="map-container">
-    <img src="images/world-map.jpg" alt="World Map" class="world-map">
 
-    <!-- SVG for routes -->
-    <svg class="map-lines"></svg>
+    <!-- ====== Import-Export Network Section ====== -->
+  
+    <div class="container">
 
-    <!-- Origin Pin (India) -->
-    <div class="pin origin" style="top: 51%; left: 67%;" data-country="India" data-flag="https://flagcdn.com/in.svg"></div>
+      <div class="map-wrapper" data-map="equirectangular">
+        <!-- Note: replace 'world-map.svg' with your transparent SVG world map (same folder) -->
+        <img id="world-map" src="world.svg" alt="World map" />
 
-    <!-- Example pins (adjust positions as needed) -->
-    <div class="pin" style="top: 59%; left: 45%;" data-country="IVORY COAST" data-flag="https://flagcdn.com/ae.svg"></div>
-    <div class="pin" style="top: 52%; left: 61%;" data-country="UAE" data-flag="https://flagcdn.com/ci.svg"></div>
-    <div class="pin" style="top: 65%; left: 56%;" data-country="TANZANIA" data-flag="https://flagcdn.com/tz.svg"></div>
-    <div class="pin" style="top: 59%; left: 47%;" data-country="TOGO" data-flag="https://flagcdn.com/tg.svg"></div>
-    <div class="pin" style="top: 64%; left: 53%;" data-country="CONGO" data-flag="https://flagcdn.com/cg.svg"></div>
-    <div class="pin" style="top: 59%; left: 48%;" data-country="BENIN" data-flag="https://flagcdn.com/bj.svg"></div>
-    <div class="pin" style="top: 57%; left: 46%;" data-country="BURKINA FASO" data-flag="https://flagcdn.com/bf.svg"></div>
-    <div class="pin" style="top: 62%; left: 56%;" data-country="UGANDA" data-flag="https://flagcdn.com/ug.svg"></div>
-    <div class="pin" style="top: 60%; left: 53%;" data-country="REPUBLIC OF CENTRAL AFRICA" data-flag="https://flagcdn.com/cf.svg"></div>
-  </div>
+        <!-- SVG overlay where paths and markers are drawn -->
+        <svg id="map-overlay" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <!-- Flight routes will be appended here by JS -->
+        </svg>
 
-  <!-- Tooltip -->
-  <div class="tooltip" id="tooltip">
-    <img id="tooltip-flag" alt="Flag">
-    <span id="tooltip-text"></span>
-  </div>
+        <!-- Markers / icons (India origin is static; destination planes are created by JS) -->
+        <div id="origin-pin" class="pin" role="img" aria-label="Origin: India">
+          <span class="pin-dot"></span>
+          <svg class="pin-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"></path>
+          </svg>
+        </div>
+
+        <!-- tooltip box (hidden by default) -->
+        <div id="tooltip" role="tooltip" aria-hidden="true"></div>
+      </div>
+
+      <p class="hint">Hover a route or plane to see the country. Static airplane icons mark destination locations.</p>
+    </div>
+
 </section>
 
 <!-- 📜 Certificates Section -->

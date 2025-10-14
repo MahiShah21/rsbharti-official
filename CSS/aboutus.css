@@ -387,94 +387,156 @@ body {
   }
 }
 
-
-.network-desc {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  font-size: 1.1rem;
-  color: #444;
+:root{
+  --accent: #1da1f2;
+  --muted: #8b95a3;
+  --bg: #0f1720;
+  --glass: rgba(255,255,255,0.05);
 }
 
-.map-container {
+
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title{
+  margin: 0 0 18px 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.2px;
+}
+
+/* ===== map area ===== */
+.map-wrapper{
   position: relative;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.world-map {
   width: 100%;
-  border-radius: 12px;
+  background: var(--glass);
+  border-radius: 14px;
+  padding: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
 }
 
-.pin {
+/* make the image responsive */
+#world-map{
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(60%) contrast(.9) brightness(.95);
+  pointer-events: none; /* clicks pass through to overlay */
+  user-select: none;
+}
+
+/* SVG overlay sits over the image */
+#map-overlay{
   position: absolute;
-  width: 15px;
-  height: 15px;
-  background: red;
-  border-radius: 50%;
-  border: 1px solid white;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  transition: transform 0.2s;
+  inset: 16px; /* matches map-wrapper padding; keeps same inner padding */
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  pointer-events: none; /* we'll enable pointer events selectively on its children */
 }
 
-.pin:hover {
-  transform: translate(-50%, -50%) scale(1.2);
-}
-
-.origin {
-  background: gold;
-  border: 2px solid black;
-}
-
-/* Tooltip */
-.tooltip {
+/* Origin pin */
+#origin-pin{
   position: absolute;
-  display: none;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%,-100%); /* anchor bottom-center */
+  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  color: #222;
-  white-space: nowrap;
-  pointer-events: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  justify-content: center;
+  pointer-events: auto;
+  cursor: default;
 }
-
-.tooltip img {
-  width: 20px;
-  height: 15px;
-  object-fit: cover;
-  border: 1px solid #ddd;
-}
-/* 🌍 Map Lines */
-.map-lines {
+.pin-dot{
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(29,161,242,0.8);
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 12px;
+}
+.pin-icon{
+  width: 22px;
+  height: 22px;
+  fill: rgba(255,255,255,0.95);
+  opacity: 0.95;
+  transform: translateY(-4px);
+}
+
+/* Plane icon (created by JS) — static placement */
+.plane {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -120%); /* place slightly above the destination dot */
+  pointer-events: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.45));
+  transition: transform 120ms ease;
+}
+
+/* tooltips */
+#tooltip{
+  position: absolute;
+  background: rgba(2,6,23,0.9);
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  pointer-events: none;
+  transform: translate(-50%,-120%);
+  white-space: nowrap;
+  display: none;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+}
+
+/* route style (SVG path) */
+.route {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.9;
+  pointer-events: auto; /* allow hover */
+  transition: stroke 200ms ease, opacity 200ms ease;
+}
+.route:hover{
+  stroke-width: 3.2;
+  opacity: 1;
+}
+
+/* small glowing destination dot at end */
+.dest-dot {
+  fill: #fff;
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  r: 4;
   pointer-events: none;
 }
 
-.map-lines line {
-  stroke: red;
-  stroke-width: 2;
-  opacity: 0.7;
-  stroke-dasharray: 6;
-  animation: dash 2s linear infinite;
+/* hint text */
+.hint{
+  margin: 12px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: -12;
-  }
+/* responsive adjustments */
+@media (max-width:800px){
+  #origin-pin{ width:32px; height:32px; }
+  .pin-icon{ width:18px; height:18px; }
+  .plane{ width:22px; height:22px; transform: translate(-50%, -135%); }
 }
-
-
 
 /* 📜 Certificates */
 .certificates {

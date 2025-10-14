@@ -94,47 +94,159 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateSlider);
   updateSlider();
 });
+/* script.js - static airplanes at destination points
+   - positions markers by lat/lon assuming the image/SVG is an equirectangular projection
+   - draws static curves from India to each destination
+   - places a single airplane icon at each destination (no animation)
+*/
 
-/* ===== NETWORK MAP HOVER + LINES ===== */
-document.addEventListener("DOMContentLoaded", () => {
-  const pins = document.querySelectorAll(".pin:not(.origin)");
-  const origin = document.querySelector(".pin.origin");
-  const tooltip = document.getElementById("tooltip");
-  const tooltipFlag = document.getElementById("tooltip-flag");
-  const tooltipText = document.getElementById("tooltip-text");
-  const svg = document.querySelector(".map-lines");
+/* ----------------- CONFIG: country coordinates -----------------
+   Lat/Lon values are approximate (capitals / central points).
+*/
+const origin = { name: 'India', lat: 16.5937, lon: 71.9629 };
 
-  if (!origin || !pins.length) return;
+const destinations = [
+  { name: 'UAE', lat: 16.4539, lon: 51.3773 },
+  { name: 'Ivory Coast', lat: -4.8276, lon: -8.2893 },
+  { name: 'Tanzania', lat: -24.1630, lon: 32.7516 },
+  { name: 'Togo', lat: -4.1725, lon: -1.2314 },
+  { name: 'Congo', lat: -20.2634, lon: 20.2429 }, // Republic of the Congo (Brazzaville)
+  { name: 'Benin', lat: -2.2969, lon: 0.2289 },
+  { name: 'Burkina Faso', lat: 2.3714, lon: -3.5197 },
+  { name: 'Central African Republic', lat: -5.3947, lon: 18.5582 },
+  { name: 'Uganda', lat: -12.3476, lon: 30.5825 }
+];
 
-  const originRect = origin.getBoundingClientRect();
-  const mapRect = origin.closest(".map-container").getBoundingClientRect();
-  const originX = originRect.left + originRect.width / 2 - mapRect.left;
-  const originY = originRect.top + originRect.height / 2 - mapRect.top;
+/* ----------------- helpers ----------------- */
+/* Map lat/lon to SVG coordinates assuming equirectangular:
+   x = (lon + 180) / 360 * width
+   y = (90 - lat) / 180 * height
+*/
+function latLonToXY(lat, lon, width, height){
+  const x = (lon + 180) / 360 * width;
+  const y = (90 - lat) / 180 * height;
+  return { x, y };
+}
 
-  pins.forEach(pin => {
-    const pinRect = pin.getBoundingClientRect();
-    const pinX = pinRect.left + pinRect.width / 2 - mapRect.left;
-    const pinY = pinRect.top + pinRect.height / 2 - mapRect.top;
+function svgEl(name, attrs = {}) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', name);
+  Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+  return el;
+}
 
-    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-    line.setAttribute("x1", originX);
-    line.setAttribute("y1", originY);
-    line.setAttribute("x2", pinX);
-    line.setAttribute("y2", pinY);
-    svg.appendChild(line);
+/* create an airplane element (SVG inside a div) */
+function createPlaneElement(name){
+  const wrapper = document.createElement('div');
+  wrapper.className = 'plane';
+  wrapper.setAttribute('role', 'img');
+  wrapper.setAttribute('aria-label', `Destination: ${name}`);
+  wrapper.innerHTML = `
+    <svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">
+      <path d="M2 12 L22 12 L18 8 L16.5 10 L12 8 L13 12 L12 16 L13.5 14 L16.5 16 L18 14 Z" fill="white"/>
+    </svg>
+  `;
+  return wrapper;
+}
 
-    pin.addEventListener("mouseenter", e => {
-      tooltip.style.display = "flex";
-      tooltipFlag.src = pin.dataset.flag;
-      tooltipText.textContent = pin.dataset.country;
-      const rect = e.target.getBoundingClientRect();
-      tooltip.style.top = rect.top + window.scrollY - 40 + "px";
-      tooltip.style.left = rect.left + window.scrollX + "px";
+/* compute control points for a smooth curve between two points */
+function computeCurveControls(x1,y1,x2,y2, width){
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  const dist = Math.sqrt(dx*dx + dy*dy);
+  const curvature = Math.max(0.05, Math.min(0.5, dist / width * 0.1)); // reduced curvature
+  const cx1 = x1 + dx * 0.25 - dy * curvature;
+  const cy1 = y1 + dy * 0.25 + dx * curvature;
+  const cx2 = x1 + dx * 0.75 - dy * curvature;
+  const cy2 = y1 + dy * 0.75 + dx * curvature;
+  return { cx1, cy1, cx2, cy2 };
+}
+
+
+/* ----------------- Main rendering ----------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const mapImg = document.getElementById('world-map');
+  const overlay = document.getElementById('map-overlay');
+  const originPin = document.getElementById('origin-pin');
+  const tooltip = document.getElementById('tooltip');
+  const wrapper = document.querySelector('.map-wrapper');
+
+  function renderMap() {
+    const imgW = mapImg.naturalWidth || mapImg.clientWidth;
+    const imgH = mapImg.naturalHeight || mapImg.clientHeight;
+    const width = imgW || mapImg.clientWidth;
+    const height = imgH || mapImg.clientHeight;
+
+    overlay.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    overlay.style.width = `${mapImg.clientWidth}px`;
+    overlay.style.height = `${mapImg.clientHeight}px`;
+
+    // place origin pin (percentage)
+    const originXY = latLonToXY(origin.lat, origin.lon, width, height);
+    originPin.style.left = `${(originXY.x / width) * 100}%`;
+    originPin.style.top  = `${(originXY.y / height) * 100}%`;
+
+    // clear previous overlay children and any existing plane elements
+    while (overlay.firstChild) overlay.removeChild(overlay.firstChild);
+    // remove old .plane elements
+    document.querySelectorAll('.map-wrapper .plane').forEach(el => el.remove());
+
+    // for each destination draw route and create plane (static)
+    destinations.forEach((d, i) => {
+      const destXY = latLonToXY(d.lat, d.lon, width, height);
+
+      // draw destination dot (circle)
+      const destCircle = svgEl('circle', {
+        cx: destXY.x,
+        cy: destXY.y,
+        r: 4
+      });
+      destCircle.classList.add('dest-dot');
+      overlay.appendChild(destCircle);
+
+      // create cubic bezier path from origin to dest
+      const { cx1, cy1, cx2, cy2 } = computeCurveControls(originXY.x, originXY.y, destXY.x, destXY.y, width);
+      const pathD = `M ${originXY.x} ${originXY.y} C ${cx1} ${cy1} ${cx2} ${cy2} ${destXY.x} ${destXY.y}`;
+      const path = svgEl('path', { d: pathD, 'class': 'route route-'+i });
+      overlay.appendChild(path);
+
+      // create a single static airplane placed at destination (a little above the dest dot)
+      const plane = createPlaneElement(d.name);
+      // use percentage relative to image for stable responsiveness
+      const percentX = (destXY.x / width) * 100;
+      const percentY = (destXY.y / height) * 100;
+      plane.style.left = percentX + '%';
+      plane.style.top  = percentY + '%';
+      wrapper.appendChild(plane);
+
+      // hover interactions: show tooltip with country
+      [path, plane].forEach(el => {
+        el.addEventListener('mouseenter', (ev) => {
+          tooltip.style.display = 'block';
+          tooltip.textContent = d.name;
+          tooltip.setAttribute('aria-hidden', 'false');
+        });
+        el.addEventListener('mousemove', (ev) => {
+          const wrapperRect = mapImg.getBoundingClientRect();
+          tooltip.style.left = (ev.clientX - wrapperRect.left) + 'px';
+          tooltip.style.top = (ev.clientY - wrapperRect.top) + 'px';
+        });
+        el.addEventListener('mouseleave', () => {
+          tooltip.style.display = 'none';
+          tooltip.setAttribute('aria-hidden', 'true');
+        });
+      });
     });
+  }
 
-    pin.addEventListener("mouseleave", () => {
-      tooltip.style.display = "none";
-    });
+  if (mapImg.complete) {
+    setTimeout(renderMap, 50);
+  } else {
+    mapImg.addEventListener('load', renderMap);
+  }
+
+  window.addEventListener('resize', () => {
+    clearTimeout(window._mapResizeTimer);
+    window._mapResizeTimer = setTimeout(renderMap, 150);
   });
 });
 
