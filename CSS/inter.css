@@ -23,6 +23,85 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   z-index: 2; /* Keep text & logos above circles */
 }
 
+
+
+/* 🌍 Flag Scrolling Strip */
+.flag-strip {
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0;
+  height: 15vh; /* around 10% of viewport height */
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.flag-track {
+  display: flex;
+  gap: 70px;
+  animation: scrollFlags 55s linear infinite;
+}
+
+.flag-track img {
+  height: 70%;   /* keeps them short */
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.flag-track img:hover {
+  transform: scale(1.1);
+}
+
+.flag-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px; /* space between flag & text */
+}
+
+.flag-item span {
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+
+/* Gap element */
+  .spacer {
+    width: 200px; /* equals ~5 flags */
+    flex-shrink: 0;
+  }
+
+@keyframes scrollFlags {
+  from { transform: translateX(40%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flag-track {
+    gap: 20px;
+    animation-duration: 20s;
+  }
+  .flag-track img {
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flag-track img {
+    max-height: 30px;
+  }
+}
+
+
+
 /* Distributor Section */
 .distributor {
   display: flex;
