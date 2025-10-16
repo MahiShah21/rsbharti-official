@@ -108,7 +108,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-  background: rgb(240, 227, 227);
+  background: #eee;
   border-radius: 12px;
   padding: 40px 60px;
   margin: 2% auto;
@@ -117,10 +117,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
 }
 
 .distributor.d_white {
-  background: rgb(238, 234, 234);
-}
-.distributor.d_grey {
-  background: rgb(216, 216, 216);
+  background: #eee;
 }
 
 /* Left side (circle) */

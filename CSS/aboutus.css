@@ -64,7 +64,7 @@ body {
 .story-content p {
     margin-bottom: 20px;
     font-size: 1.15rem;
-    color: rgba(38, 36, 36, 0.986);
+    color: #333;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -97,7 +97,7 @@ body {
 .team-section {
   text-align: center;
   padding: 40px 10px;
-  background: #eeeeeee1;
+  background: #eeeeee;
 }
 
 .team-section h2 {
@@ -171,7 +171,7 @@ body {
 
 
 .team-btn:hover {
-  background: red;
+  background: #ED3500;
 }
 
 .team-btn.prev {
@@ -233,7 +233,7 @@ body {
 .goals-section {
     text-align: center;
     padding: 60px 40px;
-    background: #eeeeeee1;
+    background: #eeeeee;
     width: 100%;           /* take full width */
 }
 
@@ -320,7 +320,7 @@ body {
   height: 15vh; /* around 10% of viewport height */
   display: flex;
   align-items: center;
-  background: #f9f9f9;
+  background: #eeeeee;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
@@ -542,17 +542,17 @@ body{
 .certificates {
   text-align: center;
   padding: 60px 20px;
-  background: #eeeeeee1;
+  background: #eeeeee;
 }
 .certificates h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  color: red;
+  color: #ED3500;
 }
 .cert-desc {
   max-width: 700px;
   margin: 0 auto 40px;
-  color: #555;
+  color: #EEEEEE;
 }
 .cert-carousel {
   display: flex;
@@ -732,13 +732,13 @@ body{
 .chevron-btn svg {
   width: 100%;
   height: 300%;
-  fill: red; /* arrow color */
+  fill: #ED3500; /* arrow color */
   transition: transform 0.3s ease, fill 0.3s ease;
 }
 
 .chevron-btn:hover svg {
   transform: scale(1.1);
-  fill: red;
+  fill: #ED3500;
 }
 
 /* Media query to adjust for very small screens */

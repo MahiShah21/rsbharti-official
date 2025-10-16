@@ -8,13 +8,12 @@
   
 
   body {
-      background-color: #fce4dfc7;
+      background-color: #fce4df;
       font-family: Arial, sans-serif;
     }
 
 .contact-header {
   position: relative;
- 
   text-align: center;
   overflow: hidden; /* hide overflow from wave */
 }
@@ -183,7 +182,7 @@ input, textarea {
 
 
 .info-box {
-  background: #f9f9f9;
+  background: #fff;
   border-radius: 12px;
   padding: 15px;
   flex: 1;
