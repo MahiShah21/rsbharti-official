@@ -31,3 +31,12 @@ document.querySelectorAll(".distributor").forEach(distributor => {
     }, intervalTime);
   });
 });
+/* ===== FLAG STRIP INFINITE LOOP ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("flagTrack");
+  if (!track) return;
+
+  // Duplicate all flags once for seamless loop
+  const clone = track.innerHTML;
+  track.innerHTML += clone;
+});

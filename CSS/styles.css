@@ -21,6 +21,7 @@
       padding: 10px 20px;
       border-radius:20px;
       position: fixed;
+      opacity: 0.7;
       background-color: white; /* black with 50% opacity */
       color: white;
       top: 50px;
@@ -29,9 +30,10 @@
       z-index: 1000;
     }
 .nav-links a.active {
-  border: 2px solid #ED3500;
-  border-radius: 5px;
-  padding: 5px 10px;
+   color: #ED3500;
+  border: none;
+  border-bottom: 2px solid #ED3500; 
+  padding-bottom: 3px;
 }
 
 
@@ -92,7 +94,7 @@
 }
 
 .dropdown-menu li a:hover {
-  background: #ED3500;
+  background: #eeeeee;
   
  
 }
@@ -634,11 +636,12 @@
     margin-bottom: 15px;
     color: #ED3500;
 }
-.content-box h3 {
+.content-box h4 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: black;
+    color: #444;
+    align-items: center;
 }
 .content-box p {
     font-size: 1rem;

@@ -322,37 +322,37 @@ body {
   width: 100%;
   overflow: hidden;
   margin: 30px 0;
-  height: 15vh; /* around 10% of viewport height */
+  height: 15vh;
   display: flex;
   align-items: center;
-  background:white;
-
+  background: white;
+  position: relative;
 }
 
 .flag-track {
   display: flex;
   gap: 70px;
-  animation: scrollFlags 55s linear infinite;
-}
-
-.flag-track img {
-  height: 70%;   /* keeps them short */
-  max-height: 60px;
-  width: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-  transition: transform 0.3s;
-}
-
-.flag-track img:hover {
-  transform: scale(1.1);
+  animation: scrollFlags 40s linear infinite;
+  width: max-content;
 }
 
 .flag-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px; /* space between flag & text */
+  gap: 6px;
+}
+
+.flag-item img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.flag-item img:hover {
+  transform: scale(1.1);
 }
 
 .flag-item span {
@@ -362,10 +362,9 @@ body {
   white-space: nowrap;
 }
 
-
 @keyframes scrollFlags {
-  from { transform: translateX(5%); }
-  to { transform: translateX(-100%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* Move half because we duplicated once */
 }
 
 /* Responsive */
@@ -614,8 +613,8 @@ body{
 
 .viewport {
   overflow: hidden;
-  height: 30vw; /* smaller than before */
-  width: 75vw;
+  height: 30vw;
+  width: 90vw;
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -627,7 +626,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1vw; /* increased spacing */
+  gap: 2.5vw;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -643,7 +642,6 @@ body{
   transition: width 0.6s ease-in-out, height 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
-/* Black border layer */
 .background-oct {
   position: absolute;
   top: 50%;
@@ -665,7 +663,6 @@ body{
   );
 }
 
-/* Image holder layer */
 .media-oct {
   position: relative;
   width: 100%;
@@ -694,25 +691,25 @@ body{
 
 /* ===== SIZE LEVELS ===== */
 .oct.small {
-  width: 5vw;
-  height: 5vw;
+  width: 9vw;
+  height: 9vw;
 }
 
 .oct.medium {
-  width: 10vw;
-  height: 10vw;
+  width: 14vw;
+  height: 14vw;
 }
 
 .oct.large {
-  width: 18vw;
-  height: 18vw;
+  width: 22vw;
+  height: 22vw;
 }
 
 /* ===== ARROW BUTTON ===== */
 .chevron-btn {
   position: absolute;
   top: 50%;
-  right: 2vw; /* further outside */
+  right: 2vw;
   transform: translateY(-50%);
   width: 10vw;
   height: 10vw;

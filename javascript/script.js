@@ -75,6 +75,7 @@ document.querySelector(".prev").addEventListener("click", () => {
 
 changeSlide();
 
+
 // Nav bar toggle
 const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav-links");

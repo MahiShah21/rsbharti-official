@@ -256,7 +256,9 @@ body, html {
     margin-bottom: 15px;
     }
 
-
+.parallax-section h3 {
+  color: #444;
+}
 
     /* Simple animation */
     @keyframes fadeInUp {

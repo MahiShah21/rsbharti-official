@@ -30,35 +30,37 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   width: 100%;
   overflow: hidden;
   margin: 30px 0;
-  height: 15vh; /* around 10% of viewport height */
+  height: 15vh;
   display: flex;
   align-items: center;
+  background: white;
+  position: relative;
 }
 
 .flag-track {
   display: flex;
   gap: 70px;
-  animation: scrollFlags 55s linear infinite;
-}
-
-.flag-track img {
-  height: 70%;   /* keeps them short */
-  max-height: 60px;
-  width: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-  transition: transform 0.3s;
-}
-
-.flag-track img:hover {
-  transform: scale(1.1);
+  animation: scrollFlags 40s linear infinite;
+  width: max-content;
 }
 
 .flag-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px; /* space between flag & text */
+  gap: 6px;
+}
+
+.flag-item img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.flag-item img:hover {
+  transform: scale(1.1);
 }
 
 .flag-item span {
@@ -68,13 +70,10 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   white-space: nowrap;
 }
 
-
-
 @keyframes scrollFlags {
-  from { transform: translateX(5%); }
-  to { transform: translateX(-100%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* Move half because we duplicated once */
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   .flag-track {
