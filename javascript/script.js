@@ -1,12 +1,23 @@
+
   const currentPage = window.location.pathname.split("/").pop().toLowerCase();
   const links = document.querySelectorAll(".nav-links a");
 
   links.forEach(link => {
-    if (link.getAttribute("href").toLowerCase() === currentPage ||
-        (currentPage === "" && link.getAttribute("href").toLowerCase() === "index.html")) {
+    const href = link.getAttribute("href").toLowerCase();
+
+    // Match direct pages like home/about/contact
+    if (href === currentPage ||
+       (currentPage === "" && href === "index.html")) {
       link.classList.add("active");
     }
+
+    // Match subpages under Offerings
+    if (currentPage === "domestic.html" || currentPage === "international.html") {
+      const offeringsLink = document.querySelector('.nav-links a[href="#"]');
+      offeringsLink.classList.add("active");
+    }
   });
+
 const items = [
   "images/warehouse.jpg",
   "images/imp-exp.jpg",
