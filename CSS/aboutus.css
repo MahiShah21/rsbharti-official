@@ -243,6 +243,11 @@ body {
     margin-bottom: 15px;
     color: #ED3500;            /* heading in red */
 }
+.goals-section p{
+    font-size: 1.1rem;
+    color: #555;           /* slightly muted para */
+    margin-bottom: 40px;
+}
 
 .goals-desc {
     max-width: 900px;
