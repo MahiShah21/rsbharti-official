@@ -28,6 +28,12 @@
       right: 5%;
       z-index: 1000;
     }
+.nav-links a.active {
+  border: 2px solid #ED3500;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
 
     .logo {
       display: flex;

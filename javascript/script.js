@@ -1,3 +1,12 @@
+  const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+  const links = document.querySelectorAll(".nav-links a");
+
+  links.forEach(link => {
+    if (link.getAttribute("href").toLowerCase() === currentPage ||
+        (currentPage === "" && link.getAttribute("href").toLowerCase() === "index.html")) {
+      link.classList.add("active");
+    }
+  });
 const items = [
   "images/warehouse.jpg",
   "images/imp-exp.jpg",
