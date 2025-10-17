@@ -309,7 +309,7 @@ body {
 .network-section h2 {
   font-size: 2.5rem;
   color: #ED3500;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 /* 🌍 Flag Scrolling Strip */
@@ -320,9 +320,8 @@ body {
   height: 15vh; /* around 10% of viewport height */
   display: flex;
   align-items: center;
-  background: #eeeeee;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  background:white;
+
 }
 
 .flag-track {

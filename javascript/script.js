@@ -1,7 +1,7 @@
 const items = [
-  "images/banner2.jpg",
-  "images/banner3.jpg",
-  "images/home_banner.jpg"
+  "images/warehouse.jpg",
+  "images/imp-exp.jpg",
+  "images/banner3.jpg"
 ];
 
 let current = 0;
