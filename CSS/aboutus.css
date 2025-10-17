@@ -585,13 +585,11 @@ body{
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
-/* Memories */
-/* CSS */
+/* ===== MEMORIES SECTION ===== */
 .memories {
   position: relative;
-  /* Use min() to cap the max width on large screens */
   width: min(1520px, 100vw);
-  padding: 20px auto;
+  padding: 20px 0;
   align-items: center;
   background: white;
   display: flex;
@@ -602,125 +600,124 @@ body{
   position: relative;
   z-index: 10;
   color: #ED3500;
-  /* Use vw for a font size that scales with the viewport */
   font-size: clamp(30px, 4vw, 50px);
   padding-top: 30px;
 }
+
+/* ===== SLIDER CONTAINER ===== */
 .slider-container {
   display: flex;
-  align-items: center; /* This centers the items vertically */
+  align-items: center;
   gap: 20px;
+  position: relative;
 }
 
 .viewport {
   overflow: hidden;
-  /* Make height relative to viewport for responsiveness */
-  height: 40vw;
+  height: 30vw; /* smaller than before */
   width: 75vw;
-  /* Max width to maintain a good aspect ratio on large screens */
   max-width: 1400px;
-  /* Center horizontally */
   margin: 0 auto;
   display: flex;
-  align-items: left;
+  align-items: center;
+  justify-content: center;
 }
 
 .track {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Use a relative gap */
-  gap: 0.1vw;
+  gap: 1vw; /* increased spacing */
   list-style: none;
   padding: 0;
   margin: 0;
   transition: transform 0.6s ease;
 }
 
-/* make size changes smooth on the hex DIVs */
-.hex {
+/* ===== OCTAGON SHAPES ===== */
+.oct {
   position: relative;
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  transition: width 0.6s ease-in-out, height 0.6s ease-in-out,
-    transform 0.6s ease-in-out;
+  transition: width 0.6s ease-in-out, height 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
-/* New: Black background hex */
-.background-hex {
+/* Black border layer */
+.background-oct {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1; /* Less z-index than the media hex */
+  z-index: 1;
   background-color: black;
-  /* Size is slightly larger to create the border effect */
-  width: calc(100% + 10px);
-  height: calc(100% + 10px);
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
   clip-path: polygon(
-    50% 0%,
-    95% 25%,
-    95% 75%,
-    50% 100%,
-    5% 75%,
-    5% 25%
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
   );
 }
 
-/* The image holder hex */
-.media-hex {
+/* Image holder layer */
+.media-oct {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 2; /* More z-index to bring it forward */
+  z-index: 2;
   clip-path: polygon(
-    50% 0%,
-    95% 25%,
-    95% 75%,
-    50% 100%,
-    5% 75%,
-    5% 25%
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
   );
   overflow: hidden;
   background: white;
 }
 
-.media-hex img {
+.media-oct img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Size levels are now responsive using viewport width units */
-.hex.small {
-  width: 8vw;
-  height: 8vw;
+/* ===== SIZE LEVELS ===== */
+.oct.small {
+  width: 5vw;
+  height: 5vw;
 }
 
-.hex.medium {
-  width: 15vw;
-  height: 15vw;
+.oct.medium {
+  width: 10vw;
+  height: 10vw;
 }
 
-.hex.large {
-  width: 25vw;
-  height: 25vw;
+.oct.large {
+  width: 18vw;
+  height: 18vw;
 }
 
-/* Arrow Button */
+/* ===== ARROW BUTTON ===== */
 .chevron-btn {
   position: absolute;
-  top: 40%;
-  /* Use a relative position based on viewport width */
-  right: 10vw;
+  top: 50%;
+  right: 2vw; /* further outside */
   transform: translateY(-50%);
-  /* Use vw for a responsive size */
-  width: 15vw;
-  height: 25vw;
-  max-width: 100px;
-  max-height: 100px;
+  width: 10vw;
+  height: 10vw;
+  max-width: 80px;
+  max-height: 80px;
   background: none;
   border: none;
   cursor: pointer;
@@ -729,8 +726,8 @@ body{
 
 .chevron-btn svg {
   width: 100%;
-  height: 300%;
-  fill: #ED3500; /* arrow color */
+  height: 100%;
+  fill: #ED3500;
   transition: transform 0.3s ease, fill 0.3s ease;
 }
 
@@ -739,18 +736,18 @@ body{
   fill: #ED3500;
 }
 
-/* Media query to adjust for very small screens */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 600px) {
-  .hex.small {
-    width: 12vw;
-    height: 12vw;
+  .oct.small {
+    width: 8vw;
+    height: 8vw;
   }
-  .hex.medium {
+  .oct.medium {
+    width: 15vw;
+    height: 15vw;
+  }
+  .oct.large {
     width: 25vw;
     height: 25vw;
-  }
-  .hex.large {
-    width: 35vw;
-    height: 35vw;
   }
 }

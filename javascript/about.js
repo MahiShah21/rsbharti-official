@@ -249,112 +249,112 @@ document.addEventListener('DOMContentLoaded', () => {
     window._mapResizeTimer = setTimeout(renderMap, 150);
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const sources = [
+    "images/mem1.jpg",
+    "images/mem2.jpg",
+    "images/mem3.jpg",
+    "images/mem4.jpg",
+    "images/mem5.jpg",
+    "images/mem6.jpg",
+    "images/mem7.jpg",
+  ];
 
-/* ===== MEMORIES HEX SLIDER ===== */
-const sources = [
-  "images/mem1.jpg",
-  "images/mem2.jpg",
-  "images/mem3.jpg",
-  "images/mem4.jpg",
-  "images/mem5.jpg",
-  "images/mem6.jpg",
-  "images/mem7.jpg",
-];
+  const track = document.getElementById("hexTrack");
+  let centerIdx = 1;
+  let sliding = false;
 
-const track = document.getElementById("hexTrack");
-let centerIdx = 1;
-let sliding = false;
+  const mod = (n, m) => ((n % m) + m) % m;
 
-function mod(n, m) {
-  return ((n % m) + m) % m;
-}
-
-function createHex(src, sizeClass) {
-  const li = document.createElement("li");
-  li.className = `hex ${sizeClass}`;
-  li.innerHTML = `
-    <div class="background-hex"></div>
-    <div class="media-hex">
+  function createOct(src, sizeClass) {
+    const li = document.createElement("li");
+    li.className = `oct ${sizeClass}`;
+    li.innerHTML = `
+      <div class="background-oct"></div>
+      <div class="media-oct">
         <img src="${src}" alt="">
-    </div>
-  `;
-  return li;
-}
-
-function initHex() {
-  if (!track) return;
-  track.innerHTML = "";
-  const sizes = ["small", "medium", "large", "medium"];
-  const rel = [-2, -1, 0, +1];
-  for (let i = 0; i < 4; i++) {
-    const idx = mod(centerIdx + rel[i], sources.length);
-    track.appendChild(createHex(sources[idx], sizes[i]));
-  }
-}
-initHex();
-
-function slideNext() {
-  if (!track || sliding) return;
-  sliding = true;
-
-  const first = track.firstElementChild;
-  if (!first) {
-    sliding = false;
-    return;
+      </div>
+    `;
+    return li;
   }
 
-  const firstWidth = first.getBoundingClientRect().width;
-  const gap = parseFloat(getComputedStyle(track).gap) || 0;
-  const offset = firstWidth + gap;
+  function initOct() {
+    if (!track) return;
+    track.innerHTML = "";
+    const sizes = ["small", "medium", "large", "medium"];
+    const rel = [-2, -1, 0, +1];
 
-  track.style.transition = "transform 0.6s ease";
-  track.style.transform = `translateX(-${offset}px)`;
+    for (let i = 0; i < sizes.length; i++) {
+      const idx = mod(centerIdx + rel[i], sources.length);
+      track.appendChild(createOct(sources[idx], sizes[i]));
+    }
+  }
+  initOct();
 
-  track.addEventListener(
-    "transitionend",
-    () => {
-      track.style.transition = "none";
-      track.style.transform = "translateX(0)";
-      track.appendChild(first);
+  function slideNext() {
+    if (!track || sliding) return;
+    sliding = true;
 
-      centerIdx = mod(centerIdx + 1, sources.length);
-      const kids = track.children;
-
-      if (kids.length >= 4) {
-        kids[0].className = "hex small";
-        kids[1].className = "hex medium";
-        kids[2].className = "hex large";
-        kids[3].className = "hex medium";
-
-        kids[0].querySelector("img").src = sources[mod(centerIdx - 2, sources.length)];
-        kids[1].querySelector("img").src = sources[mod(centerIdx - 1, sources.length)];
-        kids[2].querySelector("img").src = sources[mod(centerIdx, sources.length)];
-        kids[3].querySelector("img").src = sources[mod(centerIdx + 1, sources.length)];
-      }
-
-      void track.offsetWidth; // force reflow
+    const first = track.firstElementChild;
+    if (!first) {
       sliding = false;
-    },
-    { once: true }
-  );
-}
+      return;
+    }
 
-// Auto slide every 5s
-const AUTO_DELAY = 5000;
-let timer = setInterval(slideNext, AUTO_DELAY);
+    const firstWidth = first.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const offset = firstWidth + gap;
 
-function resetTimer() {
-  clearInterval(timer);
-  timer = setInterval(slideNext, AUTO_DELAY);
-}
+    track.style.transition = "transform 0.6s ease";
+    track.style.transform = `translateX(-${offset}px)`;
 
-document.getElementById("nextBtn")?.addEventListener("click", () => {
-  slideNext();
-  resetTimer();
+    track.addEventListener(
+      "transitionend",
+      () => {
+        track.style.transition = "none";
+        track.style.transform = "translateX(0)";
+        track.appendChild(first);
+
+        centerIdx = mod(centerIdx + 1, sources.length);
+        const kids = track.children;
+
+        if (kids.length >= 4) {
+          setTimeout(() => {
+            kids[0].className = "oct small";
+            kids[1].className = "oct medium";
+            kids[2].className = "oct large";
+            kids[3].className = "oct medium";
+
+            kids[0].querySelector("img").src = sources[mod(centerIdx - 2, sources.length)];
+            kids[1].querySelector("img").src = sources[mod(centerIdx - 1, sources.length)];
+            kids[2].querySelector("img").src = sources[mod(centerIdx, sources.length)];
+            kids[3].querySelector("img").src = sources[mod(centerIdx + 1, sources.length)];
+          }, 100);
+        }
+
+        void track.offsetWidth;
+        sliding = false;
+      },
+      { once: true }
+    );
+  }
+
+  const AUTO_DELAY = 5000;
+  let timer = setInterval(slideNext, AUTO_DELAY);
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(slideNext, AUTO_DELAY);
+  }
+
+  document.getElementById("nextBtn")?.addEventListener("click", () => {
+    slideNext();
+    resetTimer();
+  });
+
+  track?.addEventListener("mouseenter", () => clearInterval(timer));
+  track?.addEventListener("mouseleave", resetTimer);
 });
-
-track?.addEventListener("mouseenter", () => clearInterval(timer));
-track?.addEventListener("mouseleave", resetTimer);
 
 /* ===== NAVBAR TOGGLE ===== */
 document.addEventListener("DOMContentLoaded", () => {
