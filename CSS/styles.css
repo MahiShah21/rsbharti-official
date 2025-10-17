@@ -628,7 +628,12 @@
     margin-bottom: 15px;
     color: #ED3500;
 }
-
+.content-box h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: black;
+}
 .content-box p {
     font-size: 1rem;
     line-height: 1.6;
