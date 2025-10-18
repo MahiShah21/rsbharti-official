@@ -21,7 +21,7 @@
 const items = [
   "images/warehouse.jpg",
   "images/imp-exp.jpg",
-  "images/banner3.jpg"
+  "images/sitaramam1.jpg"
 ];
 
 let current = 0;

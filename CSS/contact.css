@@ -49,103 +49,84 @@
   height: 60px; /* wave height */
 }
 
-/* -----------------------FOrm-----------------------*/
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 40px 0px;
-        gap: 60px;
-    }
-    
-    .image-container {
-    position: relative;
-    display: inline-block; /* stays only on the left */
-    margin-right: 50px; /* keeps space from form */
+/* ----------- Form Container ----------- */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;  /* full screen center */
+  background-color: #f0f0f0;
+  padding: 40px;
 }
 
-.main-img {
-    width: 350px;
-    border-radius: 20px;
-    padding: 2px;
-    background-color: white;
-    
+/* ----------- Form Page Wrapper ----------- */
+.formpage {
+  width: 100%;
+  max-width: 650px;  /* makes the form smaller */
+  background:#fff ;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Polaroid style */
-.overlay-img {
-    position: absolute;
-    width: 170px;
-    height: 200px;
-    background: white;
-    
-    border-radius:30px;
-    box-shadow: 2px 4px 6px rgba(0,0,0,0.3);
-    transform: rotate(-5deg);
-    z-index: 10;
-}
-
-.overlay-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Positioning so they don't disturb right side */
-.top-left {
-    top: -60px;
-    left: 300px;
-    transform: rotate(-8deg);
-}
-
-.bottom-left {
-    bottom: -15px;
-    left: -100px;
-    transform: rotate(6deg);
-}
-.right {
-        flex: 1;
-        padding-left: 40px;
-    }
+/* ----------- Form Layout ----------- */
 form {
-        display: flex;
-        flex-direction: column;
-    }
- .row {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 15px;
-    }
-input, textarea {
-        padding: 12px;
-        border: none;
-        border-radius: 15px;
-        background-color: white;
-        font-size: 14px;
-        width: 100%;
-    }
-  textarea {
-        resize: none;
-        height: 80px;
-    }
-  label {
-        margin-bottom: 5px;
-        font-size: 14px;
-        font-weight: normal;
-        color: #000;
-    }
-  .submit-btn {
-        background-color: #ED3500;
-        color: white;
-        font-size: 16px;
-        border: none;
-        padding: 12px;
-        border-radius: 25px;
-        cursor: pointer;
-        width: 150px;
-    }
+  display: flex;
+  flex-direction: column;
+}
 
+.row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* ----------- Inputs ----------- */
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 100%;
+  background-color: #fafafa;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #ED3500;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* ----------- Labels ----------- */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ----------- Button ----------- */
+.submit-btn {
+  background-color: #ED3500;
+  color: white;
+  font-size: 16px;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #c82d00;
+}
     /*------------------------------------section------------------------------------/
 
     /* -------------------------- Location ----------------------------------*/

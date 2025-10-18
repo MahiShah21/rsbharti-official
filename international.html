@@ -22,34 +22,108 @@
 </head>
 
 
+<script type="application/ld+json">
+
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.rsbharti.com/#organization",
+      "name": "RS Bharti",
+      "url": "https://www.rsbharti.com",
+      "logo": "https://www.rsbharti.com/images/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/rsbharti-global-private-limited/",
+        "https://www.instagram.com/rsbharti2019/"
+        ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-9216029779",
+          "contactType": "customer service",
+          "areaServed": ["IN","ZA"],
+          "availableLanguage": ["en","hi"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-9216029783",
+          "contactType": "business",
+          "areaServed": ["IN","ZA"],
+          "availableLanguage": ["en"]
+        }
+      ]
+    },
+
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.rsbharti.com/#localbusiness",
+      "name": "RS Bharti",
+      "telephone": "+91-9216029779",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "I-172 Old Purana Bapu Nagar",
+        "addressLocality": "Bhilwara",
+        "addressRegion": "Rajasthan",
+        "postalCode": "311001",
+        "addressCountry": "IN"
+      },
+   
+      "url": "https://www.rsbharti.com",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "sameAs": [
+        "https://www.linkedin.com/company/rsbharti-global-private-limited/",
+        "https://www.instagram.com/rsbharti2019/"
+      ]
+    },
+
+    {
+      "@type": "Product",
+      "@id": "https://www.rsbharti.com/products/sitaramam-tea",
+      "name": "Sita Ramam Tea",
+      "description": "Sita Ramam — premium Indian tea by RS Bharti. Available in retail and wholesale packs.",
+      "image": [
+        "https://www.rsbharti.com/images/sitaramam-250g.jpg",
+        "https://www.rsbharti.com/images/sitaramam-1kg.jpg"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "Sitaramam"
+      },
+    }
+</script> 
+
+
 
 
 <body>
-  <header>
-    <div class="navbar">
-      <div class="logo">
-        <img src="images/logo.png" alt="Logo">
-      </div>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="Index.html">Home</a></li>
-        <li><a href="about_us.html">About Us</a></li>
-        <li class="dropdown">
-          <a href="#">Offerings▾</a>
-          <ul class="dropdown-menu">
-            <li><a href="domestic.html">Domestic</a></li>
-            <li><a href="international.html">International</a></li>
-          </ul>
-        </li>
-        <li><a href="FAQs.html">FAQs</a></li>
-        <li><a href="contact_us.html">Contact Us</a></li>
-      </ul>
+    <!-- Header and Navbar -->
+<header>
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" loading="lazy">
     </div>
+
+    <div class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">☰</div>
+
+    <ul class="nav-links" id="nav-links" role="menubar">
+      <li role="menuitem"><a href="Index.html">Home</a></li>
+      <li role="menuitem"><a href="about_us.html">About Us</a></li>
+      <li class="dropdown" role="menuitem">
+        <a href="#">Offerings▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="domestic.html">Domestic</a></li>
+          <li><a href="international.html">International</a></li>
+       </ul>
+      </li>
+      <li role="menuitem"><a href="FAQs.html">FAQs</a></li>
+      <li role="menuitem"><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+  </nav>
   </header>
 
     <section class="hero">
       <div class="hero-content">
-        <h1>Global Exporter</h1>
+        <h1><strong>Global Exporter</strong></h1>
         <p>Your Gateway to Global Markets, Taking Indian Excellence Beyond Borders</p>
       </div>
     </section>
@@ -58,16 +132,16 @@
 
 <div class="flag-strip">
   <div class="flag-track" id="flagTrack">
-    <div class="flag-item"><img src="https://flagcdn.com/ae.svg" alt="UAE"><span>UAE</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/ci.svg" alt="Ivory Coast"><span>IVORY COAST</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/tz.svg" alt="Tanzania"><span>TANZANIA</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/tg.svg" alt="Togo"><span>TOGO</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/cg.svg" alt="Congo"><span>CONGO</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/bj.svg" alt="Benin"><span>BENIN</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/bf.svg" alt="Burkina Faso"><span>BURKINA FASO</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/cf.svg" alt="Central African Republic"><span>REPUBLIC OF CENTRAL AFRICA</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/ug.svg" alt="Uganda"><span>UGANDA</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/in.svg" alt="India"><span>INDIA</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/ae.svg" alt="UAE" loading="lazy"><span>UAE</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/ci.svg" alt="Ivory Coast" loading="lazy"><span>IVORY COAST</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/tz.svg" alt="Tanzania" loading="lazy"><span>TANZANIA</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/tg.svg" alt="Togo" loading="lazy"><span>TOGO</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/cg.svg" alt="Congo" loading="lazy"><span>CONGO</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/bj.svg" alt="Benin" loading="lazy"><span>BENIN</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/bf.svg" alt="Burkina Faso" loading="lazy"><span>BURKINA FASO</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/cf.svg" alt="Central African Republic" loading="lazy"><span>REPUBLIC OF CENTRAL AFRICA</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/ug.svg" alt="Uganda" loading="lazy"><span>UGANDA</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/in.svg" alt="India" loading="lazy"><span>INDIA</span></div>
   </div>
 </div>
 </section>
@@ -76,15 +150,15 @@
 <div class="distributor d_white">
   <div class="distributor-left">
     <div class="circle-wrapper">
-      <img src="images/garments.jpg" alt="Distributor 1">
+      <img src="images/garments.jpg" alt="garments-RS Bharti" loading="lazy">
       <svg>
         <circle class="progress-ring__circle" cx="110" cy="110" r="105"></circle>
       </svg>
     </div>
   </div>
   <div class="distributor-right">
-    <h2>GARMENTS EXPORT </h2>
-    <p>We are a trusted garment export specialist, connecting international buyers with high-quality apparel from reputable producers. Our expertise lies in managing the entire export lifecycle, from the initial sourcing and quality control checks to final delivery. We strictly adhere to all international trade standards and manage complex documentation, customs regulations, and logistics to ensure every order is processed efficiently and compliantly. Partner with us to secure a reliable, hassle-free supply chain for your ready-made garments, ensuring your products arrive on time and as specified.</p>
+    <h2><strong>GARMENTS EXPORT</strong> </h2>
+    <p>We are a trusted <Strong>garment export</strong> specialist, connecting international buyers with high-quality apparel from reputable producers. Our expertise lies in managing the entire export lifecycle, from the initial sourcing and quality control checks to final delivery. We strictly adhere to all <strong>international trade </strong>standards and manage complex documentation, customs regulations, and logistics to ensure every order is processed efficiently and compliantly. Partner with us to secure a reliable, hassle-free supply chain for your ready-made garments, ensuring your products arrive on time and as specified.</p>
   </div>
   </div>
 
@@ -92,15 +166,15 @@
   <div class="distributor d_white">
   <div class="distributor-left">
     <div class="circle-wrapper">
-      <img src="images/cookies.jpg" alt="Distributor 1">
+      <img src="images/cookies.jpg" alt="Biscuits-RS Bharti" loading="lazy">
       <svg>
         <circle class="progress-ring__circle" cx="110" cy="110" r="105"></circle>
       </svg>
     </div>
   </div>
   <div class="distributor-right">
-    <h2>BISCUITS EXPORT </h2>
-    <p>We specialize in the global distribution of high-quality biscuits and cookies. As your dedicated export partner, we manage the entire complex process of moving delicate baked goods across continents. Our service is built on strategic sourcing from certified manufacturers, strict adherence to international food safety regulations, and specialized logistics that ensure product integrity. We utilize protective packaging and efficient, fast freight to preserve the freshness, crunch, and flavor of every biscuit, guaranteeing they arrive at your market in perfect, shelf-ready condition.</p>
+    <h2><strong>BISCUITS EXPORT </strong></h2>
+    <p>We specialize in the <strong>global distribution</strong> of high-quality biscuits and cookies. As your dedicated export partner, we manage the entire complex process of moving delicate baked goods across continents. Our service is built on strategic sourcing from certified manufacturers, strict adherence to international food safety regulations, and specialized logistics that ensure product integrity. We utilize protective packaging and efficient, fast freight to preserve the freshness, crunch, and flavor of every biscuit, guaranteeing they arrive at your market in perfect, shelf-ready condition.</p>
   </div>
   </div>
 
@@ -108,15 +182,15 @@
 <div class="distributor d_white">
   <div class="distributor-left">
     <div class="circle-wrapper">
-      <img src="images/electronics.jpg" alt="Distributor 1">
+      <img src="images/electronics.jpg" alt="Electronics-RS Bharti" loading="lazy">
       <svg>
         <circle class="progress-ring__circle" cx="110" cy="110" r="105"></circle>
       </svg>
     </div>
   </div>
     <div class="distributor-right">
-       <h2>ELECTRONICS EXPORT </h2>
-       <p>[RS Bharti global private limited] is a trusted global exporter of electronic products. We bridge the gap between world-class manufacturers and international markets, specializing in the efficient, compliant, and timely shipping of various electronic goods. We manage all logistics, documentation, and quality assurance to ensure a secure supply chain, allowing you to quickly access the high-demand products you need without the manufacturing overhead.</p>
+       <h2><strong>ELECTRONICS EXPORT</strong> </h2>
+       <p><strong>[RS Bharti global private limited]</strong> is a <strong>trusted global exporter</strong> of electronic products. We bridge the gap between world-class manufacturers and international markets, specializing in the efficient, compliant, and timely shipping of various electronic goods. We manage all logistics, documentation, and quality assurance to ensure a secure supply chain, allowing you to quickly access the high-demand products you need without the manufacturing overhead.</p>
     </div> 
   </div>
 
@@ -124,20 +198,19 @@
 <div class="distributor d_white">
   <div class="distributor-left">
     <div class="circle-wrapper">
-      <img src="images/Export3.jpg" alt="Distributor 1">
+      <img src="images/Export3.jpg" alt="Rice-RS Bharti" loading="lazy">
       <svg>
         <circle class="progress-ring__circle" cx="110" cy="110" r="105"></circle>
       </svg>
     </div>
   </div>
   <div class="distributor-right">
-    <h2>AGRI COMMODITY EXPORT </h2>
-    <p>We are specialist Agri-Commodity Exporters, dedicated to providing a secure and consistent global supply of essential agricultural goods. While we do not cultivate the crops ourselves, our expertise lies in strategic sourcing, rigorous quality grading, and maintaining a robust, temperature-controlled supply chain. We manage the complexities of global logistics, phytosanitary requirements, and import/export documentation to ensure bulk shipments of grains, spices, or processed foods arrive fresh, compliant, and on schedule. Trust us to be your reliable partner for uninterrupted agricultural procurement.</p>
+    <h2><strong>AGRI COMMODITY EXPORT </strong></h2>
+    <p>We are specialist <strong>Agri-Commodity Exporters</strong>, dedicated to providing a secure and consistent global supply of essential agricultural goods. While we do not cultivate the crops ourselves, our expertise lies in strategic sourcing, rigorous quality grading, and maintaining a robust, temperature-controlled supply chain. We manage the complexities of global logistics, phytosanitary requirements, and import/export documentation to ensure bulk shipments of grains, spices, or processed foods arrive fresh, compliant, and on schedule. Trust us to be your reliable partner for uninterrupted agricultural procurement.</p>
   </div>
   </div>
 
 </section>
-
 
 <footer class="footer">
   <div class="footer-container">
@@ -145,17 +218,17 @@
     <div class="footer-column">
       <h3>Follow Us</h3>
 <div class="social-links">
-  <a href="https://www.linkedin.com/company/rsbharti-global-private-limited/" target="_blank" title="Facebook">
-    <img src="images/linkedin.png" alt="linkedin" class="social-icon" />
+  <a href="https://www.linkedin.com/company/rsbharti-global-private-limited/" target="_blank" rel="noopener noreferrer" title="Facebook">
+    <img src="images/linkedin.png" alt="linkedin-RS Bharti" class="social-icon" loading="lazy"/>
   </a>
-  <a href="https://www.instagram.com/rsbharti2019?igsh=MXdyam9uaTFwOGc1aw==" target="_blank" title="Instagram">
-    <img src="images/instagram-icon.png" alt="Instagram" class="social-icon" />
+  <a href="https://www.instagram.com/rsbharti2019?igsh=MXdyam9uaTFwOGc1aw==" target="_blank" rel="noopener noreferrer". title="Instagram">
+    <img src="images/instagram-icon.png" alt="Instagram-RS Bharti" class="social-icon" loading="lazy" />
   </a>
-  <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=Info@rsbhartigroup.co" target="_blank" title="Gmail">
-    <img src="images/gmail-icon.png" alt="Gmail" class="social-icon" />
+  <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=Info@rsbhartigroup.co" target="_blank" rel="noopener noreferrer". title="Gmail">
+    <img src="images/gmail-icon.png" alt="Gmail-RS Bharti" class="social-icon" />
   </a>
-  <a href="https://wa.me/+919216029779" target="_blank" title="WhatsApp">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp" class="social-icon" />
+  <a href="https://wa.me/+919216029779" target="_blank" rel="noopener noreferrer".title="WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp-RS Bharti" class="social-icon" loading="lazy"/>
   </a>
 </div>
 
@@ -184,10 +257,10 @@
 
     <!-- Company Info -->
     <div class="footer-column">
-      <h3><img src="images/logo.png" alt="RS Bharti Logo" class="footer-logo" />
-        RS Bharti
+      <h3><img src="images/logo.png" alt="RS Bharti Logo" class="footer-logo" loading="lazy"/>
+       <strong>  RS Bharti</strong> 
       </h3>
-      <p>Delivering Trust Globally, and Building Bridges with Quality</p>
+      <p><strong> Delivering Trust Globally, and Building Bridges with Quality</strong> </p>
     </div>
   </div>
 
@@ -199,8 +272,8 @@
 </footer>
 
 
-<script src="javascript/script.js"></script>
-<script src="javascript/nav_script.js"></script>
-  <script src="javascript/inter.js"></script>
+<script src="javascript/script.js" defer></script>
+<script src="javascript/nav_script.js" defer></script>
+  <script src="javascript/inter.js" defer></script>
 </body>
 </html>

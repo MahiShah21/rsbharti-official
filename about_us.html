@@ -7,6 +7,7 @@
   
     <!-- Canonical -->
   <link rel="canonical" href="https://www.rsbharti.com/about_us.html" />
+    <meta name="robots" content="index, follow" />
 
   <meta property="og:title" content="RS-Bharti — Distributor of Britannia, ONN, and Pynk | Sita Raman Tea" />
   <meta property="og:description" content="RS-Bharti distributes major brands like Britannia, ONN, and Pynk. Makers of Sita Raman Tea. Import & export business in South Africa and beyond." />
@@ -20,14 +21,107 @@
   <link rel="stylesheet" href="CSS/styles.css" rel="preload"/>
 </head>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.rsbharti.com/#organization",
+      "name": "RS Bharti",
+      "url": "https://www.rsbharti.com",
+      "logo": "https://www.rsbharti.com/images/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/rsbharti-global-private-limited/",
+        "https://www.instagram.com/rsbharti2019/"
+        ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-9216029779",
+          "contactType": "customer service",
+          "areaServed": ["IN","ZA"],
+          "availableLanguage": ["en","hi"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+91-9216029783",
+          "contactType": "business",
+          "areaServed": ["IN","ZA"],
+          "availableLanguage": ["en"]
+        }
+      ]
+    },
+
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.rsbharti.com/#localbusiness",
+      "name": "RS Bharti",
+      "telephone": "+91-9216029779",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "I-172 Old Purana Bapu Nagar",
+        "addressLocality": "Bhilwara",
+        "addressRegion": "Rajasthan",
+        "postalCode": "311001",
+        "addressCountry": "IN"
+      },
+   
+      "url": "https://www.rsbharti.com",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "sameAs": [
+        "https://www.linkedin.com/company/rsbharti-global-private-limited/",
+        "https://www.instagram.com/rsbharti2019/"
+      ]
+    },
+
+    {
+      "@type": "Product",
+      "@id": "https://www.rsbharti.com/products/sitaramam-tea",
+      "name": "Sita Ramam Tea",
+      "description": "Sita Ramam — premium Indian tea by RS Bharti. Available in retail and wholesale packs.",
+      "image": [
+        "https://www.rsbharti.com/images/sitaramam-250g.jpg",
+        "https://www.rsbharti.com/images/sitaramam-1kg.jpg"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "Sitaramam"
+      },
+    {
+      "@type": "Person",
+      "name": "Dheeraj Bachani",
+      "jobTitle": "CEO",
+      "worksFor": {
+        "@id": "https://www.rsbharti.com/#organization"
+      },
+      "image": "https://www.rsbharti.com/images/Dheeraj.jpg"
+    },
+
+    {
+      "@type": "Person",
+      "name": "Shubham Jain",
+      "jobTitle": "COO",
+      "worksFor": {
+        "@id": "https://www.rsbharti.com/#organization"
+      },
+      "image": "https://www.rsbharti.com/images/subham.jpg"
+    }
+
+  ]
+}
+</script>
+
 
 <body>
 <header>
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main Navigation">
     <div class="logo">
-      <img src="images/logo.png" alt="Logo">
+      <img src="images/logo.png" alt="Logo" loading="lazy">
     </div>
-    <div class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">☰</div>
+
+    <div class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">☰</div>
+
     <ul class="nav-links" id="nav-links" role="menubar">
       <li role="menuitem"><a href="Index.html">Home</a></li>
       <li role="menuitem"><a href="about_us.html">About Us</a></li>
@@ -42,11 +136,11 @@
       <li role="menuitem"><a href="contact_us.html">Contact Us</a></li>
     </ul>
   </nav>
-</header>
+  </header>
 
 <!-- Hero Section -->
 <section class="hero">
-  <img src="images/about_us.jpg" alt="RS Bharti Team - Global Distribution">
+  <img src="images/about_us.jpg" alt="RS Bharti Team - Global Distribution" loading="lazy">
   <div class="tagline">
     <h1>RSBharti: Beyond Borders. Building Global Trust with Indian Quality.</h1>
   </div>
@@ -78,33 +172,33 @@ We are not just building a business—we are building a legacy of quality, trust
       <div class="team-container">
         <!-- Member 1 -->
          <div class="team-member">
-          <img src="images/Dheeraj.jpg" alt="Dheeraj Bachani - CEO of RS Bharti">
+          <img src="images/Dheeraj.jpg" alt="Dheeraj Bachani - CEO of RS Bharti" loading="lazy">
           <h3>Dheeraj Bachani</h3>
           <p>CEO</p>
         </div>
        
         <!-- Member 2 -->
         <div class="team-member">
-          <img src="images/subham.jpg" alt="Shubham Jain - COO of RS Bharti">
+          <img src="images/subham.jpg" alt="Shubham Jain - COO of RS Bharti" loading="lazy">
           <h3>Shubham Jain</h3>
           <p>COO</p>
         </div>
         
         <!-- Member 3 -->
         <div class="team-member">
-          <img src="images/bhavesh.jpg" alt="Bhavesh Jain - Project Manager of RS Bharti">
+          <img src="images/bhavesh.jpg" alt="Bhavesh Jain - Project Manager of RS Bharti" loading="lazy">
           <h3>Bhavesh Jain</h3>
           <p>Project Manager</p>
         </div>
         <!-- Member 4 -->
         <div class="team-member">
-          <img src="images/Sandeep.jpg" alt="Sandeep chadha - Project Manager of RS Bharti">
+          <img src="images/Sandeep.jpg" alt="Sandeep chadha - Project Manager of RS Bharti" loading="lazy">
           <h3>Sandeep Chadha</h3>
           <p>Project Manager</p>
         </div>
         <!-- Member 5 -->
          <div class="team-member">
-          <img src="images/Ayush.jpg" alt="Ayush Jain - Export Head of RS Bharti">
+          <img src="images/Ayush.jpg" alt="Ayush Jain - Export Head of RS Bharti" loading="lazy">
           <h3>Ayush Jain</h3>
           <p>Export Head</p>
         </div>
@@ -142,7 +236,7 @@ We are not just building a business—we are building a legacy of quality, trust
     <!-- Goal 1 -->
     <div class="goal-item">
       <div class="goal-icon">
-        <img src="images/diagram.png" alt="billions-RS Bharti">
+        <img src="images/diagram.png" alt="billions-RS Bharti" loading="lazy">
       </div>
       <h3>$1 Billion</h3>
       <p>Most ambitious objective is to elevate RS Bharti to the prestigious status of a 'Unicorn' company, valued at over $1 Billion.</p>
@@ -151,7 +245,7 @@ We are not just building a business—we are building a legacy of quality, trust
     <!-- Goal 2 -->
     <div class="goal-item">
       <div class="goal-icon">
-        <img src="images/global-network.png" alt="countries-RS Bharti">
+        <img src="images/global-network.png" alt="countries-RS Bharti" loading="lazy">
       </div>
       <h3>50+ Countries</h3>
       <p>A crucial strategic goal is to aggressively expand our operations and presence into more than 50 countries.</p>
@@ -160,7 +254,7 @@ We are not just building a business—we are building a legacy of quality, trust
     <!-- Goal 3 -->
     <div class="goal-item">
       <div class="goal-icon">
-        <img src="images/cubes.png" alt="product-RS Bharti">
+        <img src="images/cubes.png" alt="product-RS Bharti" loading="lazy">
       </div>
       <h3>50+ Products</h3>
       <p>we are committed to launching more than 50 new and state-of-the-art products into the market</p>
@@ -177,16 +271,16 @@ We are not just building a business—we are building a legacy of quality, trust
   </p>
   <div class="flag-strip">
   <div class="flag-track" id="flagTrack">
-    <div class="flag-item"><img src="https://flagcdn.com/ae.svg" alt="UAE"><span>UAE</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/ci.svg" alt="Ivory Coast"><span>IVORY COAST</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/tz.svg" alt="Tanzania"><span>TANZANIA</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/tg.svg" alt="Togo"><span>TOGO</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/cg.svg" alt="Congo"><span>CONGO</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/bj.svg" alt="Benin"><span>BENIN</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/bf.svg" alt="Burkina Faso"><span>BURKINA FASO</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/cf.svg" alt="Central African Republic"><span>REPUBLIC OF CENTRAL AFRICA</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/ug.svg" alt="Uganda"><span>UGANDA</span></div>
-    <div class="flag-item"><img src="https://flagcdn.com/in.svg" alt="India"><span>INDIA</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/ae.svg" alt="UAE" loading="lazy"><span>UAE</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/ci.svg" alt="Ivory Coast" loading="lazy"><span>IVORY COAST</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/tz.svg" alt="Tanzania" loading="lazy"><span>TANZANIA</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/tg.svg" alt="Togo" loading="lazy"><span>TOGO</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/cg.svg" alt="Congo" loading="lazy"><span>CONGO</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/bj.svg" alt="Benin" loading="lazy"><span>BENIN</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/bf.svg" alt="Burkina Faso" loading="lazy"><span>BURKINA FASO</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/cf.svg" alt="Central African Republic" loading="lazy"><span>REPUBLIC OF CENTRAL AFRICA</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/ug.svg" alt="Uganda" loading="lazy"><span>UGANDA</span></div>
+    <div class="flag-item"><img src="https://flagcdn.com/in.svg" alt="India" loading="lazy"><span>INDIA</span></div>
   </div>
 </div>
 
@@ -197,7 +291,7 @@ We are not just building a business—we are building a legacy of quality, trust
 
       <div class="map-wrapper" data-map="equirectangular">
         <!-- Note: replace 'world-map.svg' with your transparent SVG world map (same folder) -->
-        <img id="world-map" src="world.svg" alt="World map" />
+        <img id="world-map" src="world.svg" alt="World map" loading="lazy"/>
 
         <!-- SVG overlay where paths and markers are drawn -->
         <svg id="map-overlay" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -227,34 +321,33 @@ We are not just building a business—we are building a legacy of quality, trust
   <p class="cert-desc">Recognized and certified by international authorities for our quality and compliance.</p>
   
   <div class="cert-carousel">
-    <div class="cert-card"><img src="images/Registration_cert.jpg" alt="Registration Certificate"><span>Registration Certificate</span></div>
-    <div class="cert-card"><img src="images/imp-exp_cert.jpg" alt="Importer-Expoter certificate"><span>Importer-Expoter certificate</span></div>
-    <div class="cert-card"><img src="images/coi.png" alt="Certificate of incorporation"><span>Certificate of incorporation</span></div>
-    <div class="cert-card"><img src="images/fssai.png" alt="FSSAI Certificate"><span>FSSAI Certification</span></div>
-    <div class="cert-card"><img src="images/udhyam.png" alt="Udhyam Certificate"><span>UDHYAM Certificate</span></div>
+    <div class="cert-card"><img src="images/Registration_cert.jpg" alt="Registration Certificate" loading="lazy"><span>Registration Certificate</span></div>
+    <div class="cert-card"><img src="images/imp-exp_cert.jpg" alt="Importer-Expoter certificate" loading="lazy"><span>Importer-Expoter certificate</span></div>
+    <div class="cert-card"><img src="images/coi.png" alt="Certificate of incorporation" loading="lazy"><span>Certificate of incorporation</span></div>
+    <div class="cert-card"><img src="images/fssai.png" alt="FSSAI Certificate" loading="lazy"><span>FSSAI Certification</span></div>
+    <div class="cert-card"><img src="images/udhyam.png" alt="Udhyam Certificate" loading="lazy"><span>UDHYAM Certificate</span></div>
   </div>
 </section>
 
 
 <!---footer-->
-
 <footer class="footer">
   <div class="footer-container">
     <!-- Social Media -->
     <div class="footer-column">
       <h3>Follow Us</h3>
 <div class="social-links">
-  <a href="https://www.linkedin.com/company/rsbharti-global-private-limited/" target="_blank" title="Facebook">
-    <img src="images/linkedin.png" alt="linkedin-RS Bharti" class="social-icon" />
+  <a href="https://www.linkedin.com/company/rsbharti-global-private-limited/" target="_blank" rel="noopener noreferrer" title="Facebook">
+    <img src="images/linkedin.png" alt="linkedin-RS Bharti" class="social-icon" loading="lazy"/>
   </a>
-  <a href="https://www.instagram.com/rsbharti2019?igsh=MXdyam9uaTFwOGc1aw==" target="_blank" title="Instagram">
-    <img src="images/instagram-icon.png" alt="Instagram-RS Bharti" class="social-icon" />
+  <a href="https://www.instagram.com/rsbharti2019?igsh=MXdyam9uaTFwOGc1aw==" target="_blank" rel="noopener noreferrer". title="Instagram">
+    <img src="images/instagram-icon.png" alt="Instagram-RS Bharti" class="social-icon" loading="lazy" />
   </a>
-  <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=Info@rsbhartigroup.co" target="_blank" title="Gmail">
+  <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=Info@rsbhartigroup.co" target="_blank" rel="noopener noreferrer". title="Gmail">
     <img src="images/gmail-icon.png" alt="Gmail-RS Bharti" class="social-icon" />
   </a>
-  <a href="https://wa.me/+919216029779" target="_blank" title="WhatsApp">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp-RS Bharti" class="social-icon" />
+  <a href="https://wa.me/+919216029779" target="_blank" rel="noopener noreferrer".title="WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp-RS Bharti" class="social-icon" loading="lazy"/>
   </a>
 </div>
 
@@ -283,10 +376,10 @@ We are not just building a business—we are building a legacy of quality, trust
 
     <!-- Company Info -->
     <div class="footer-column">
-      <h3><img src="images/logo.png" alt="RS Bharti Logo" class="footer-logo" />
-        RS Bharti
+      <h3><img src="images/logo.png" alt="RS Bharti Logo" class="footer-logo" loading="lazy"/>
+       <strong>  RS Bharti</strong> 
       </h3>
-      <p>Delivering Trust Globally, and Building Bridges with Quality</p>
+      <p><strong> Delivering Trust Globally, and Building Bridges with Quality</strong> </p>
     </div>
   </div>
 
