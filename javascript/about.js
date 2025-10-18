@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", () => {
   const sources = [
     "images/mem1.jpg",
-    "images/mem2.jpg",
+    "images/mem2.png",
     "images/mem3.jpg",
     "images/mem4.jpg",
     "images/mem5.jpg",
