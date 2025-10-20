@@ -17,6 +17,7 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   text-align: center;
   position: relative;
 }
+
 .hero_content {
   padding-top: 100px;
   position: relative;
@@ -190,6 +191,10 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
     padding: 30px 20px;
     width: 95%;
   }
+    .distributor:nth-child(even) {
+    flex-direction: column !important;
+  }
+
 
   .distributor-left {
     margin-bottom: 20px;
@@ -211,13 +216,23 @@ body { font-family: 'Georgia', serif; line-height: 1.8; }
   .circle-wrapper {
     width: 180px;
     height: 180px;
+    position: relative;
   }
   .circle-wrapper img {
     width: 170px;
     height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
   }
   .circle-wrapper svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
     width: 180px;
     height: 180px;
+  }
+    .progress-ring__circle {
+    stroke-width: 4;
   }
 }
