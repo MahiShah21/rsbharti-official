@@ -19,9 +19,9 @@
   });
 
 const items = [
+  "images/sitaramam1.jpg",
   "images/warehouse.jpg",
-  "images/imp-exp.jpg",
-  "images/sitaramam1.jpg"
+  "images/imp-exp.jpg"
 ];
 
 let current = 0;

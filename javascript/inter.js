@@ -13,10 +13,9 @@ document.querySelectorAll(".distributor").forEach(distributor => {
     circle.style.strokeDashoffset = "0";
 
     // ✅ Instantly show full text (no word-by-word animation)
-    textElement.style.opacity = 1;
-  });
+    textElement.style.opacity = 1;
+  });
 });
-
 /* ===== FLAG STRIP INFINITE LOOP ===== */
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("flagTrack");
