@@ -2,13 +2,13 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  margin-top: 10%;
   background: #eee;
 }
 
 .faq-section {
   max-width: 1200px;
   margin: auto;
-  margin-top: 10%;
   padding: 20px;
 }
 
@@ -22,7 +22,7 @@ body {
   text-align: center;
   color: #ED3500;
   font-size: 2.2rem;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -109,7 +109,7 @@ body {
   .faq-section,
   .faq-section2 {
     width: 90%;          /* take 90% of screen */
-    margin: 35% auto;     /* center it with vertical spacing */
+    margin: 12% auto;     /* center it with vertical spacing */
     padding: 4%;         /* relative padding */
   }
   .icon {

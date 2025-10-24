@@ -29,6 +29,7 @@
       right: 5%;
       z-index: 1000;
     }
+    
 .nav-links a.active {
    color: #ED3500;
   border: none;
@@ -168,7 +169,7 @@
 .slide-content {
   text-align: center;
   margin-top: 10%;
-  width: 100%;
+  width: 90%;
   z-index: 1;
   position: relative;
 }
@@ -177,13 +178,7 @@
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 50px;
-  background: #ED3500;
-  opacity:0.6;
-}
-
-.slide-content h1 span {
-  background: #ED3500;
-  padding: 0 15px;
+  background-color: rgba(245, 73, 39, 0.4);
 }
 
 
